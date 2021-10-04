@@ -9,8 +9,10 @@ public class LevelManager : MonoBehaviour
     public int CurrentCubesKilled = 0;
     public int Index;
     public TimeCounter UIMenu;
+   
 	private void Awake()
 	{
+        //data = SaveSystem.LoadPlayer();
         Time.timeScale = 1f;
     }
 	// Start is called before the first frame update
@@ -63,6 +65,7 @@ public class LevelManager : MonoBehaviour
 		{
             CurrentCubesKilled = CubesToKill;
 		}
+		
     }
     public void SlowLevelGame()
 	{

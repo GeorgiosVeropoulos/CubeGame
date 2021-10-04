@@ -1,38 +1,49 @@
-﻿using System.IO;
-using UnityEngine;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿//using System.IO;
+//using UnityEngine;
+//using System.Runtime.Serialization.Formatters.Binary;
 
-public static class SaveSystem
-{
-	public static void SavePlayer(TimeCounter timer)
-	{
-		BinaryFormatter formatter = new BinaryFormatter();
-		string path = Application.persistentDataPath + "/player.cubes";
-		FileStream stream = new FileStream(path, FileMode.Create);
 
-		TimeData data = new TimeData(timer);
+//public static class SaveSystem
+//{
+	
+//	public static void SavePlayer(TimeCounter timer)
+//	{
+//		// LOAD DATA
+		
 
-		formatter.Serialize(stream, data);
-		stream.Close();
-	}
+//		// SAVE 
+//		string path = Application.persistentDataPath + "/player.cubes";
+		
 
-	public static TimeData LoadPlayer()
-	{
-		string path = Application.persistentDataPath + "/player.cubes";
+//		BinaryFormatter formatter = new BinaryFormatter();
+//		//FileStream stream = new FileStream(path, FileMode.Create);
+//		FileStream streams = File.OpenWrite(path);
+		
+//		TimeData data = new TimeData(timer);
+		
 
-		if (File.Exists(path))
-		{
-			BinaryFormatter formatter = new BinaryFormatter();
-			FileStream stream = new FileStream(path, FileMode.Open);
+//		formatter.Serialize(streams, data);
+		
+//		streams.Close();
+//	}
 
-			TimeData data = formatter.Deserialize(stream) as TimeData;
-			stream.Close();
-			return data;
-		}
-		else
-		{
-			Debug.LogError("SAVE FILE NOT FOUND IN " + path);
-			return null;
-		}
-	}
-}
+//	public static TimeData LoadPlayer()
+//	{
+//		string path = Application.persistentDataPath + "/player.cubes";
+
+//		if (File.Exists(path))
+//		{
+//			BinaryFormatter formatter = new BinaryFormatter();
+//			//FileStream stream = new FileStream(path, FileMode.Open);
+//			FileStream stream = File.OpenRead(path);
+//			TimeData data = formatter.Deserialize(stream) as TimeData;
+//			stream.Close();
+//			return data;
+//		}
+//		else
+//		{
+//			Debug.LogError("SAVE FILE NOT FOUND IN " + path);
+//			return null;
+//		}
+//	}
+//}

@@ -22,18 +22,23 @@ public class TimeCounter : MonoBehaviour
     public GameObject manager;
     public int IndexofScene;
     public int Level;
-	// private TextMesh theTextmesh;
-	public void Awake()
+
+    public TimeData data;
+
+    // private TextMesh theTextmesh;
+    public void Awake()
 	{
+        //Save();
+        
+        
         IndexofScene = SceneManager.GetActiveScene().buildIndex;
         Level = IndexofScene;
-        Load();
     }
 
 	void Start()
     {
         Debug.Log("Index of scene is " + IndexofScene);
-        
+        //TimeofFinish = PlayerPrefs.GetFloat("highscore", TimeofFinish);
         
         TimeTopLeft.SetActive(true);
         Timer.SetActive(true);
@@ -57,7 +62,25 @@ public class TimeCounter : MonoBehaviour
             
             EndScreenTimer.SetActive(true);
             //SaveSystem.SavePlayer(this);
-            Save();
+
+            // Create a save if the timer was better than the previous one
+            
+            if(TimeofLevel <= TimeofFinish)
+			{
+
+                Save();
+                //SaveManager.Save(data);
+            }
+			else
+			{
+                if (TimeofFinish == 0)
+                {
+                   // Save();
+                }
+            }
+            
+            
+            
             //SavingandLoading();
         }
         if(Time.timeScale == 1)
@@ -101,79 +124,46 @@ public class TimeCounter : MonoBehaviour
 	}
     public void SavingandLoading()
 	{
-  //      if(SaveSystem.LoadPlayer() != null)
-		//{
-  //          TimeData data = SaveSystem.LoadPlayer();
-
-  //          IndexofScene = data.level;
-  //          TimeofLevel = data.Timer;
-  //          Debug.Log(TimeofLevel);
-  //          Debug.Log(IndexofScene);
-  //          if(timer <= TimeofLevel)
-		//	{
-  //              SaveSystem.SavePlayer(this);
-                
-  //              Debug.Log("Best time is " + data.Timer);
-  //          }
-		//	else
-		//	{
-
-		//	}
-  //      }
-		//else
-		//{
-  //          SaveSystem.SavePlayer(this);
-  //          Debug.Log("HERE");
-		//}
+        if(TimeofLevel<= TimeofFinish)
+		{
+           
+		}
+  
 	}
 	public void Save()
 	{
-		SaveSystem.SavePlayer(this);
+        data.Timer[IndexofScene] = TimeofLevel;
+		SaveManager.Save(data);
 
 	}
 	public void Load()
 	{
-        if (SaveSystem.LoadPlayer() != null)
+		if (SaveManager.Load() != null)
 		{
-            TimeData data = SaveSystem.LoadPlayer();
+			TimeData data = SaveManager.Load();
 
-            
-            Level = data.level[IndexofScene];
-            Debug.Log("The current level is = " + Level);
-            TimeofLevel = data.Timer[IndexofScene];
-            Debug.Log("The current timer is = " + TimeofLevel);
-        }
+
+			Level = data.level[IndexofScene];
+			//Debug.Log("The current level is = " + Level);
+			if (data.Timer[IndexofScene] != 0)
+			{
+				TimeofFinish = data.Timer[IndexofScene];
+
+			}
+			else
+			{
+				//data.Timer[IndexofScene] = TimeofLevel;
+			}
+
+			Debug.Log("The current best timer for level " + Level + "  is " + TimeofFinish);
+		}
 		else
 		{
 
 		}
-       
-  //      if (IndexofScene == 1)
-  //      {
-  //          TimeofLevel = data.Timer1;
-            
 
-  //      }
-  //      if (IndexofScene == 2)
-  //      {
-  //          TimeofLevel = data.Timer2;
 
-  //      }
-  //      if (IndexofScene == 3)
-  //      {
-  //          TimeofLevel = data.Timer3;
+	}
 
-  //      }
-  //      if (IndexofScene == 4)
-  //      {
-  //          TimeofLevel = data.Timer4;
 
-  //      }
-  //      if(IndexofScene == 0)
-		//{
-  //          Debug.Log("WHY THE FUCK IS IT 0");
-		//}
-    }
-
-    
 }
