@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
         //Debug.Log(Index);
         if (CubesToKill == CurrentCubesKilled)
 		{
-            Debug.Log("STOP THE COUNT");
+            //Debug.Log("STOP THE COUNT");
             SlowLevelGame();
             //Debug.Log(Time.timeScale);
 
@@ -58,6 +58,10 @@ public class LevelManager : MonoBehaviour
                 UIMenu.PauseMenu.SetActive(false);
                 UnPauseGame();
 			}
+		}
+		if (Input.GetKeyDown(KeyCode.Q))
+		{
+            CurrentCubesKilled = CubesToKill;
 		}
     }
     public void SlowLevelGame()

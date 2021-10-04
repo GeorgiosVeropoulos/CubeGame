@@ -21,8 +21,8 @@ public class MainMenuPlayerScript : MonoBehaviour
 	}
 	private void Update()
 	{
-		Debug.Log(ListofCheckPoints[1].transform.position);
-		Debug.Log(dir);
+		//Debug.Log(ListofCheckPoints[1].transform.position);
+		//Debug.Log(dir);
 		//if(gameObject.transform.position != ListofCheckPoints[0].transform.position)
 		//{
 		//	Debug.Log("it reached here");

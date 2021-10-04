@@ -32,7 +32,7 @@ public class Cube : MonoBehaviour
 		if(Physics.Raycast(transform.position, -Vector3.up, out hit, 4f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.up * hit.distance, Color.yellow);
-			Debug.Log(hit.transform.gameObject.tag);
+			//Debug.Log(hit.transform.gameObject.tag);
 			if(hit.transform.gameObject.tag == "Floor")
 			{
 				

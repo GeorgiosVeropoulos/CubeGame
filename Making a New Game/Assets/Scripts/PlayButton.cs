@@ -16,7 +16,7 @@ public class PlayButton : MonoBehaviour
 	void Start()
     {
         currentscene = SceneManager.GetActiveScene();
-        Debug.Log(currentscene.buildIndex);
+        //Debug.Log(currentscene.buildIndex);
     }
 
     // Update is called once per frame
