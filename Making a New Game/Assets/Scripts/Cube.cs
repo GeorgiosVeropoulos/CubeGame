@@ -8,7 +8,7 @@ public class Cube : MonoBehaviour
     Rigidbody mRigidbody;
     public float Thrust = 20f;
 	public bool freecontrols = false;
-	
+	public TimerToStart timetostart;
 	public Vector3 dir;
 	
 	private void Awake()
@@ -49,7 +49,7 @@ public class Cube : MonoBehaviour
 		
 		
 		//Debug.Log(detect.Direction);
-		if (freecontrols == false && Time.timeScale == 1)
+		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)
 		{
 			mRigidbody.freezeRotation = true;
 			dir = Vector3.zero;

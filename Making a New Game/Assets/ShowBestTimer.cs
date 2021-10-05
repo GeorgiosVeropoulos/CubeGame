@@ -22,7 +22,7 @@ public class ShowBestTimer : MonoBehaviour
 		//bestimer = data.Timer[_level];
 		// text.text = data.Timer[_level].ToString();
 		//TimeData data = SaveManager.Load();
-		//bestimer = Gamemanager.times[_level];
+		bestimer = Gamemanager.times[_level];
 		text.text = Gamemanager.times[_level].ToString();
 	}
 

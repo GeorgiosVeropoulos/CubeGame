@@ -24,7 +24,7 @@ public class TimeCounter : MonoBehaviour
     public int IndexofScene;
     public int Level;
     public GameManager Gamemanager;
-   
+    public TimerToStart TimerToStart;
 
     // private TextMesh theTextmesh;
     public void Awake()
@@ -54,6 +54,7 @@ public class TimeCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (manager.GetComponent<LevelManager>().CurrentCubesKilled == manager.GetComponent<LevelManager>().CubesToKill)
         {
             TimeofLevel = timer;
@@ -85,17 +86,28 @@ public class TimeCounter : MonoBehaviour
             
             //SavingandLoading();
         }
-        if(Time.timeScale == 1)
+        if(TimerToStart.begingame == true)
 		{
-            timer += Time.deltaTime;
+            if (Time.timeScale == 1)
+            {
+                timer += Time.deltaTime;
 
-            
-            txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString();
+
+                txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString();
+            }
+
         }
+        //      if(Time.timeScale == 1)
+        //{
+        //          timer += Time.deltaTime;
 
-		
 
-        
+        //          txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString();
+        //      }
+
+
+
+
     }
     
     public void LoadNextScene()

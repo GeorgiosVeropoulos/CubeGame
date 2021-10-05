@@ -4233,6 +4233,7 @@ MonoBehaviour:
   tumblingDuration: 0.17
   Thrust: 1
   freecontrols: 0
+  timetostart: {fileID: 1640832158}
   dir: {x: 0, y: 0, z: 0}
 --- !u!54 &482693816
 Rigidbody:
@@ -8483,6 +8484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1640832156}
   - component: {fileID: 1640832157}
+  - component: {fileID: 1640832158}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -8520,6 +8522,20 @@ MonoBehaviour:
   CurrentCubesKilled: 0
   Index: 0
   UIMenu: {fileID: 1814047809014036637}
+--- !u!114 &1640832158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640832155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a43be59cd98804fa20221cb50d84c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeValue: 5
+  begingame: 0
 --- !u!1 &1743435625
 GameObject:
   m_ObjectHideFlags: 0
@@ -10830,6 +10846,8 @@ MonoBehaviour:
   manager: {fileID: 1640832155}
   IndexofScene: 2
   Level: 2
+  Gamemanager: {fileID: 0}
+  TimerToStart: {fileID: 1640832158}
 --- !u!1001 &5251237331788027364
 PrefabInstance:
   m_ObjectHideFlags: 0
