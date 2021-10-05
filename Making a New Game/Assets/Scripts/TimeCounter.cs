@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
 public class TimeCounter : MonoBehaviour
 {
     public float timer;
@@ -22,17 +23,18 @@ public class TimeCounter : MonoBehaviour
     public GameObject manager;
     public int IndexofScene;
     public int Level;
-
-    public TimeData data;
+    public GameManager Gamemanager;
+   
 
     // private TextMesh theTextmesh;
     public void Awake()
 	{
         //Save();
-        
-        
+
+        Gamemanager = FindObjectOfType<GameManager>();
         IndexofScene = SceneManager.GetActiveScene().buildIndex;
         Level = IndexofScene;
+        TimeofFinish = Gamemanager.times[Level];
     }
 
 	void Start()
@@ -68,14 +70,14 @@ public class TimeCounter : MonoBehaviour
             if(TimeofLevel <= TimeofFinish)
 			{
 
-                Save();
-                //SaveManager.Save(data);
+                //Gamemanager.Save();
+               
             }
 			else
 			{
                 if (TimeofFinish == 0)
                 {
-                   // Save();
+                    Gamemanager.times[Level] = TimeofLevel;
                 }
             }
             
@@ -91,16 +93,9 @@ public class TimeCounter : MonoBehaviour
             txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString();
         }
 
-		if (Input.GetKey(KeyCode.Q))
-		{
-            //TimeData data = SaveSystem.LoadPlayer();
+		
 
-            //IndexofScene = data.level;
-            //TimeofLevel = data.Timer;
-
-		}
-
-        //theTextmesh.text = "" + timer.ToString();
+        
     }
     
     public void LoadNextScene()
@@ -122,48 +117,7 @@ public class TimeCounter : MonoBehaviour
             SceneManager.LoadScene(previouscene);
 		}
 	}
-    public void SavingandLoading()
-	{
-        if(TimeofLevel<= TimeofFinish)
-		{
-           
-		}
-  
-	}
-	public void Save()
-	{
-        data.Timer[IndexofScene] = TimeofLevel;
-		SaveManager.Save(data);
-
-	}
-	public void Load()
-	{
-		if (SaveManager.Load() != null)
-		{
-			TimeData data = SaveManager.Load();
-
-
-			Level = data.level[IndexofScene];
-			//Debug.Log("The current level is = " + Level);
-			if (data.Timer[IndexofScene] != 0)
-			{
-				TimeofFinish = data.Timer[IndexofScene];
-
-			}
-			else
-			{
-				//data.Timer[IndexofScene] = TimeofLevel;
-			}
-
-			Debug.Log("The current best timer for level " + Level + "  is " + TimeofFinish);
-		}
-		else
-		{
-
-		}
-
-
-	}
+    
 
 
 }

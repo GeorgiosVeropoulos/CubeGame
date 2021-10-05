@@ -563,6 +563,11 @@ MonoBehaviour:
   manager: {fileID: 1640832155}
   IndexofScene: 1
   Level: 1
+  data:
+    timer1: 0
+    timer2: 0
+    timer3: 0
+    timer4: 0
 --- !u!1 &387541963
 GameObject:
   m_ObjectHideFlags: 0
@@ -7800,7 +7805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CubesToKill: 1
   CurrentCubesKilled: 0
-  Index: 0
+  Index: 1
   UIMenu: {fileID: 378551750}
 --- !u!1 &1711668222
 GameObject:
