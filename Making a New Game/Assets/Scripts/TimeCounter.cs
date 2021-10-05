@@ -70,7 +70,7 @@ public class TimeCounter : MonoBehaviour
             if(TimeofLevel <= TimeofFinish)
 			{
 
-                //Gamemanager.Save();
+                Gamemanager.times[Level] = TimeofLevel;
                
             }
 			else

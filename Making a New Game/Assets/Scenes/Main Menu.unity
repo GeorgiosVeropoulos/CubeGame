@@ -2381,6 +2381,7 @@ MonoBehaviour:
   text: {fileID: 262526665}
   _level: 2
   bestimer: 0
+  Gamemanager: {fileID: 0}
 --- !u!114 &262526665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5445,6 +5446,7 @@ MonoBehaviour:
   text: {fileID: 0}
   _level: 4
   bestimer: 0
+  Gamemanager: {fileID: 0}
 --- !u!114 &580034495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5769,6 +5771,7 @@ MonoBehaviour:
   text: {fileID: 640956911}
   _level: 1
   bestimer: 0
+  Gamemanager: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -12068,6 +12071,7 @@ MonoBehaviour:
   text: {fileID: 0}
   _level: 3
   bestimer: 0
+  Gamemanager: {fileID: 0}
 --- !u!114 &1601974048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13469,6 +13473,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91650c5f4da714b438aec1bc12443114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  times:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!4 &2070142082
 Transform:
   m_ObjectHideFlags: 0
