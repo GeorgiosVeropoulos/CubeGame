@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public int CurrentCubesKilled = 0;
     public int Index;
     public TimeCounter UIMenu;
+    public TimerToStart timertoStart;
    
 	private void Awake()
 	{
@@ -26,45 +27,47 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        //Debug.Log(Index);
-        if (CubesToKill == CurrentCubesKilled)
+        if(timertoStart.begingame == true)
 		{
-            //Debug.Log("STOP THE COUNT");
-            SlowLevelGame();
-            //Debug.Log(Time.timeScale);
+            if (CubesToKill == CurrentCubesKilled)
+            {
+                SlowLevelGame();
 
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if(Time.timeScale == 1f)
-			{
-                SceneManager.LoadScene(Index);
-                UnPauseGame();
             }
-			else
-			{
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (Time.timeScale == 1f)
+                {
+                    SceneManager.LoadScene(Index);
+                    UnPauseGame();
+                }
+                else
+                {
 
-			}
-            
-        }
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-            
-            if(Time.timeScale == 1f)
-			{
-                UIMenu.PauseMenu.SetActive(true);
-                PauseGame();
+                }
+
             }
-            else if(Time.timeScale == 0f)
-			{
-                UIMenu.PauseMenu.SetActive(false);
-                UnPauseGame();
-			}
-		}
-		if (Input.GetKeyDown(KeyCode.Q))
-		{
-            CurrentCubesKilled = CubesToKill;
-		}
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                if (Time.timeScale == 1f)
+                {
+                    UIMenu.PauseMenu.SetActive(true);
+                    PauseGame();
+                }
+                else if (Time.timeScale == 0f)
+                {
+                    UIMenu.PauseMenu.SetActive(false);
+                    UnPauseGame();
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                CurrentCubesKilled = CubesToKill;
+            }
+        }
+        
+        
 		
     }
     public void SlowLevelGame()

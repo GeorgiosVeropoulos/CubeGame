@@ -7735,7 +7735,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh70494
+  m_Name: pb_Mesh49642
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7940,6 +7940,7 @@ MonoBehaviour:
   CurrentCubesKilled: 0
   Index: 1
   UIMenu: {fileID: 378551750}
+  timertoStart: {fileID: 1640832158}
 --- !u!114 &1640832158
 MonoBehaviour:
   m_ObjectHideFlags: 0

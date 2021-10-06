@@ -19,6 +19,11 @@ public class ShowControls : MonoBehaviour
         currentscene = SceneManager.GetActiveScene();
         //Debug.Log(currentscene.buildIndex);
     }
+    public void QuitGame()
+	{
+        Application.Quit();
+        
+	}
     public void EnableControlsMenu()
 	{
         Controls.SetActive(true);

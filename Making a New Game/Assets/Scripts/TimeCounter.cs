@@ -97,13 +97,7 @@ public class TimeCounter : MonoBehaviour
             }
 
         }
-        //      if(Time.timeScale == 1)
-        //{
-        //          timer += Time.deltaTime;
-
-
-        //          txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString();
-        //      }
+        
 
 
 
