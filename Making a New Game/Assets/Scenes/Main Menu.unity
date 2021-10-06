@@ -5443,7 +5443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d290e999d89fd646be99df39b2c71ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 580034495}
   _level: 4
   bestimer: 0
   Gamemanager: {fileID: 0}
@@ -12332,7 +12332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d290e999d89fd646be99df39b2c71ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 1601974048}
   _level: 3
   bestimer: 0
   Gamemanager: {fileID: 0}

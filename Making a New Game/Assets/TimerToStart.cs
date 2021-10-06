@@ -37,16 +37,17 @@ public class TimerToStart : MonoBehaviour
 
     void DisplayTime(float timetoDisplay)
 	{
-        if(timetoDisplay < 0)
-		{
-            timetoDisplay = 0;
-            timetoDisplay.ToString("GO");
-        }
 
         float seconds = Mathf.FloorToInt(timetoDisplay % 60);
         
         timeToStartText.text = string.Format("{0:0}", seconds);
-        
-	}
+
+        if (timetoDisplay < 1)
+        {
+            //timetoDisplay = 0;
+            //timetoDisplay.ToString("GO");
+            timeToStartText.text = "GO";
+        }
+    }
 
 }

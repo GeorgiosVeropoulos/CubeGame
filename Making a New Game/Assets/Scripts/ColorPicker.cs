@@ -5,9 +5,9 @@ using UnityEngine;
 public class ColorPicker : MonoBehaviour
 {
 
-    public GameObject thiscube;
+    //public GameObject thiscube;
     
-    private MeshRenderer meshrend;
+    public MeshRenderer meshrend;
     public Color _color;
    
     
@@ -16,9 +16,13 @@ public class ColorPicker : MonoBehaviour
     public void Awake()
     {
 
-        thiscube = this.gameObject;
+        //thiscube = this.gameObject;
         //counter = GetComponent<Counter>();
-        meshrend = thiscube.GetComponent<MeshRenderer>();
+        if(meshrend == null)
+		{
+            meshrend = this.gameObject.GetComponent<MeshRenderer>();
+        }
+        
     }
 
 
@@ -29,7 +33,7 @@ public class ColorPicker : MonoBehaviour
         if (randomcolorstart == 1)
         {
             meshrend.material.color = Color.red;
-
+            
         }
         else if (randomcolorstart == 2)
         {

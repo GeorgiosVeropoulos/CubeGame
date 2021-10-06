@@ -13,19 +13,15 @@ public class KILLALL : MonoBehaviour
 	}
 	public void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.GetComponent<BoxCollider>() != null)
-		{
-			if (other.gameObject.tag == "Player")
-			{
-				SceneManager.LoadScene(Index);
-			}
-			else
-			{
-				Destroy(other.gameObject);
-			}
-			
 
+		if (other.gameObject.tag == "Player")
+		{
+			SceneManager.LoadScene(Index);
 		}
-		
+		else
+		{
+			Destroy(other.gameObject);
+		}
+
 	}
 }
