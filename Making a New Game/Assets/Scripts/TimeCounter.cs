@@ -92,8 +92,9 @@ public class TimeCounter : MonoBehaviour
             {
                 timer += Time.deltaTime;
 
+                
+                txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString("F2");
 
-                txtmeshtext.GetComponent<TextMeshProUGUI>().text = "" + timer.ToString();
             }
 
         }

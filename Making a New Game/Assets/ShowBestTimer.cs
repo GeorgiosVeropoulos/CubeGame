@@ -19,7 +19,7 @@ public class ShowBestTimer : MonoBehaviour
     {
         
 		bestimer = Gamemanager.times[_level];
-		text.text = Gamemanager.times[_level].ToString();
+		text.text = Gamemanager.times[_level].ToString("F3");
 	}
 
     
