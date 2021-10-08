@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Cube : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Cube : MonoBehaviour
 	{
         mRigidbody = GetComponent<Rigidbody>();
 		freecontrols = false;
+		ONFINGERUP();
 	}
 	
 	public void Update()
@@ -144,6 +146,10 @@ public class Cube : MonoBehaviour
 		left = false;
 		right = false;
 		Debug.Log("HAND UP");
+	}
+	public void onfingerdown()
+	{
+		
 	}
 	bool isTumbling = false;
 	IEnumerator Tumble(Vector3 direction)
