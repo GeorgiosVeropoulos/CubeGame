@@ -10614,6 +10614,10 @@ MonoBehaviour:
   freecontrols: 0
   timetostart: {fileID: 1640832158}
   dir: {x: 0, y: 0, z: 0}
+  Up: 0
+  down: 0
+  left: 0
+  right: 0
 --- !u!54 &482693816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11400,7 +11404,7 @@ ReflectionProbe:
   m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
-  m_Resolution: 2048
+  m_Resolution: 16
   m_UpdateFrequency: 0
   m_BoxSize: {x: 14.41, y: 6.43, z: 29.36}
   m_BoxOffset: {x: 0, y: 0, z: 0}

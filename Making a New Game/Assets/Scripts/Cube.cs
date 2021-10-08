@@ -30,21 +30,19 @@ public class Cube : MonoBehaviour
 		freecontrols = false;
 		ONFINGERUP();
 	}
-	
 	public void Update()
 	{
-
 		// CHECKS IF WE ARE ON THE FLOOR
 		RaycastHit hit;
-		if(Physics.Raycast(transform.position, -Vector3.up, out hit, 4f))
+		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 4f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.up * hit.distance, Color.yellow);
 			//Debug.Log(hit.transform.gameObject.tag);
-			if(hit.transform.gameObject.tag == "Floor")
+			if (hit.transform.gameObject.tag == "Floor")
 			{
-				
+
 			}
-			
+
 		}
 		else
 		{
@@ -53,7 +51,12 @@ public class Cube : MonoBehaviour
 			freecontrols = true;
 			mRigidbody.AddForce(Vector3.down);
 		}
-		Debug.Log(Up);
+		
+	}
+	public void FixedUpdate()
+	{
+
+		
 		
 		//Debug.Log(detect.Direction);
 		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)

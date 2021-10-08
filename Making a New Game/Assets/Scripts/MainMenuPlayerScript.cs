@@ -19,7 +19,7 @@ public class MainMenuPlayerScript : MonoBehaviour
 		mRigidbody = GetComponent<Rigidbody>();
 		
 	}
-	private void Update()
+	private void FixedUpdate()
 	{
 		//Debug.Log(ListofCheckPoints[1].transform.position);
 		//Debug.Log(dir);
