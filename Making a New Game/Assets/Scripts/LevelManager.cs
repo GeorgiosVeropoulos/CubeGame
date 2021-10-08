@@ -70,6 +70,33 @@ public class LevelManager : MonoBehaviour
         
 		
     }
+    public void Restart()
+	{
+
+        if (Time.timeScale == 1f)
+        {
+            SceneManager.LoadScene(Index);
+            UnPauseGame();
+        }
+        else
+        {
+
+        }
+    }
+    public void Escape()
+	{
+
+        if (Time.timeScale == 1f)
+        {
+            UIMenu.PauseMenu.SetActive(true);
+            PauseGame();
+        }
+        else if (Time.timeScale == 0f)
+        {
+            UIMenu.PauseMenu.SetActive(false);
+            UnPauseGame();
+        }
+    }
     public void SlowLevelGame()
 	{
         if(Time.timeScale >= 0.3f)

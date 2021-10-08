@@ -10,7 +10,12 @@ public class Cube : MonoBehaviour
 	public bool freecontrols = false;
 	public TimerToStart timetostart;
 	public Vector3 dir;
+	public bool Up = false;
+	public bool down = false;
+	public bool left = false;
+	public bool right = false;
 	
+
 	private void Awake()
 	{
 		//SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
@@ -46,7 +51,7 @@ public class Cube : MonoBehaviour
 			freecontrols = true;
 			mRigidbody.AddForce(Vector3.down);
 		}
-		
+		Debug.Log(Up);
 		
 		//Debug.Log(detect.Direction);
 		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)
@@ -55,24 +60,24 @@ public class Cube : MonoBehaviour
 			dir = Vector3.zero;
 			
 			#region Normal Controls
-			if (Input.GetKey(KeyCode.W))
+			if (Input.GetKey(KeyCode.W) || Up == true)
 			{
 				dir = Vector3.forward;
 			}
 
 
-			if (Input.GetKey(KeyCode.S))
+			if (Input.GetKey(KeyCode.S) || down == true)
 			{
 				dir = Vector3.back;
 			}
 
 
-			if (Input.GetKey(KeyCode.A))
+			if (Input.GetKey(KeyCode.A) || left == true)
 			{
 				dir = Vector3.left;
 			}
 
-			if (Input.GetKey(KeyCode.D))
+			if (Input.GetKey(KeyCode.D) || right == true)
 			{
 				dir = Vector3.right;
 			}
@@ -81,15 +86,65 @@ public class Cube : MonoBehaviour
 			{
 				StartCoroutine(Tumble(dir));
 			}
+			else
+			{
+				//Up = false;
+				//down = false;
+				//left = false;
+				//right = false;
+			}
+			
 		}
 		else
 		{
 			//dir = Vector3.zero;
 		}
+		//GOUP();
+		//GODOWN();
+		//GOLEFT();
+		//GORIGHT();
+		
 
+		
 	}
-
-
+	public void GOUP()
+	{
+		Debug.Log("HAND DOWN");
+		Up = true;
+		down = false;
+		left = false;
+		right = false;
+		
+	}
+	public void GODOWN()
+	{
+		Up = false;
+		down = true;
+		left = false;
+		right = false;
+	}
+	public void GOLEFT()
+	{
+		Up = false;
+		down = false;
+		left = true;
+		right = false;
+	}
+	public void GORIGHT()
+	{
+		Up = false;
+		down = false;
+		left = false;
+		right = true;
+	}
+	public void ONFINGERUP()
+	{
+		Up = false;
+		down = false;
+		left = false;
+		right = false;
+		Debug.Log("HAND UP");
+	}
 	bool isTumbling = false;
 	IEnumerator Tumble(Vector3 direction)
 	{
