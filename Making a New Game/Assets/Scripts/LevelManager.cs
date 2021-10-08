@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
 	// Start is called before the first frame update
 	public void Start()
     {
-        
+        Application.targetFrameRate = 60;
         Scene currentscene = SceneManager.GetActiveScene();
         Index = currentscene.buildIndex;
     }
