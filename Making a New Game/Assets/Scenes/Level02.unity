@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.35257798, g: 0.6316868, b: 1.6637074, a: 1}
+  m_IndirectSpecularColor: {r: 0.35253346, g: 0.6316664, b: 1.663683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.475483
+      value: -3.5239997
       objectReference: {fileID: 0}
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
@@ -4285,7 +4285,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 1
 --- !u!1 &566292493
 GameObject:
@@ -4640,7 +4640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &816360874
 Transform:
   m_ObjectHideFlags: 0
@@ -6473,7 +6473,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46388
+  m_Name: pb_Mesh91506
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6636,7 +6636,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46278
+  m_Name: pb_Mesh91396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6838,7 +6838,7 @@ PrefabInstance:
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47
+      value: 0.417
       objectReference: {fileID: 0}
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
@@ -8067,7 +8067,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46358
+  m_Name: pb_Mesh91476
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8390,10 +8390,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6395302254049463673, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
+        type: 3}
+      propertyPath: field of view
+      value: 55.515667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395302254049463673, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6395302254049463675, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395302254049463676, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
+        type: 3}
+      propertyPath: fog.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395302254049463677, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6395302254049463678, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
@@ -8634,7 +8654,7 @@ PrefabInstance:
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.475483
+      value: -3.524
       objectReference: {fileID: 0}
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
@@ -8751,7 +8771,7 @@ PrefabInstance:
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4013153
+      value: 1.326
       objectReference: {fileID: 0}
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
@@ -11621,7 +11641,7 @@ PrefabInstance:
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47
+      value: 0.417
       objectReference: {fileID: 0}
     - target: {fileID: 8895595270131315591, guid: 5bae5eca1f601ef489546413bbe1b689,
         type: 3}

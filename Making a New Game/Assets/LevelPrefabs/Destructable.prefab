@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8895595270131315612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.499, y: 0.52548265, z: -4.5008097}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40997bac24d4eb44288b526ddd454f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiscube: {fileID: 0}
+  meshrend: {fileID: 0}
   _color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8895595270131315590
 MonoBehaviour:
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubeSize: 0.2
   cubesInRow: 5
+  manager: {fileID: 0}
   prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
   explosionForce: 50
   explosionRadius: 4
