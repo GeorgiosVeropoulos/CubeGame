@@ -17,7 +17,7 @@ public class TimeCounter : MonoBehaviour
     
     public GameObject TimeTopLeft;
     public GameObject Timer;
-
+    
     public GameObject PauseMenu;
     public GameObject EndScreenTimer;
     public GameObject manager;
@@ -36,6 +36,8 @@ public class TimeCounter : MonoBehaviour
         IndexofScene = SceneManager.GetActiveScene().buildIndex;
         Level = IndexofScene;
         TimeofFinish = Gamemanager.times[Level];
+        
+        
     }
 
 	void Start()
@@ -65,11 +67,12 @@ public class TimeCounter : MonoBehaviour
             Timer.SetActive(false);
             TouchControls.SetActive(false);
             EndScreenTimer.SetActive(true);
+            
             //SaveSystem.SavePlayer(this);
 
             // Create a save if the timer was better than the previous one
-            
-            if(TimeofLevel <= TimeofFinish)
+
+            if (TimeofLevel <= TimeofFinish)
 			{
 
                 Gamemanager.times[Level] = TimeofLevel;
@@ -82,9 +85,9 @@ public class TimeCounter : MonoBehaviour
                     Gamemanager.times[Level] = TimeofLevel;
                 }
             }
-            
-            
-            
+
+
+            Gamemanager.SaveData();
             //SavingandLoading();
         }
         if(TimerToStart.begingame == true)

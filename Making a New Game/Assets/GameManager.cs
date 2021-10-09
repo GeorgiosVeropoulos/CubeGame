@@ -50,8 +50,10 @@ public class GameManager : MonoBehaviour
 		SaveData();
 		
 	}
+	
 
-	void SaveData()
+	
+	public void SaveData()
 	{
 		FileStream file = null;
 
@@ -81,7 +83,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void LoadData()
+	public void LoadData()
 	{
 		FileStream file = null;
 
