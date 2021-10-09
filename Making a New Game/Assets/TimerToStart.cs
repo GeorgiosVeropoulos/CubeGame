@@ -10,11 +10,13 @@ public class TimerToStart : MonoBehaviour
     public bool begingame = false;
     public TextMeshProUGUI timeToStartText;
     public GameObject TextHolder;
+    public GameObject SideButtons;
 
     // Start is called before the first frame update
     void Start()
     {
         TextHolder.SetActive(true);
+        SideButtons.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class TimerToStart : MonoBehaviour
             timeValue = 0;
             begingame = true;
             TextHolder.SetActive(false);
+            SideButtons.SetActive(true);
 		}
         DisplayTime(timeValue);
         

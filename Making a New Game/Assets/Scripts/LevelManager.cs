@@ -73,15 +73,8 @@ public class LevelManager : MonoBehaviour
     public void Restart()
 	{
 
-        if (Time.timeScale == 1f)
-        {
-            SceneManager.LoadScene(Index);
-            UnPauseGame();
-        }
-        else
-        {
-
-        }
+        SceneManager.LoadScene(Index);
+        UnPauseGame();           
     }
     public void Escape()
 	{

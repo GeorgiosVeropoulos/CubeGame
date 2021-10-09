@@ -21,6 +21,7 @@ public class TimeCounter : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject EndScreenTimer;
     public GameObject manager;
+    public GameObject TouchControls;
     public int IndexofScene;
     public int Level;
     public GameManager Gamemanager;
@@ -30,7 +31,7 @@ public class TimeCounter : MonoBehaviour
     public void Awake()
 	{
         //Save();
-
+        TouchControls.SetActive(true);
         Gamemanager = FindObjectOfType<GameManager>();
         IndexofScene = SceneManager.GetActiveScene().buildIndex;
         Level = IndexofScene;
@@ -62,7 +63,7 @@ public class TimeCounter : MonoBehaviour
             EndScreenTimer.GetComponent<TextMeshProUGUI>().text = "Your Time was:  " + TimeofLevel.ToString();
             TimeTopLeft.SetActive(false);
             Timer.SetActive(false);
-            
+            TouchControls.SetActive(false);
             EndScreenTimer.SetActive(true);
             //SaveSystem.SavePlayer(this);
 

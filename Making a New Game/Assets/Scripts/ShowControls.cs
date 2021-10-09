@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ShowControls : MonoBehaviour
 {
-    public GameObject Controls;
+    public GameObject Settings;
+    public GameObject SettingsButton;
+    public GameObject BackButton;
     public GameObject RestofUI;
     public GameObject LevelsUI;
+   
     private Scene currentscene;
+    public bool ShowSettings = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -18,6 +22,7 @@ public class ShowControls : MonoBehaviour
     {
         currentscene = SceneManager.GetActiveScene();
         //Debug.Log(currentscene.buildIndex);
+        BackButton.SetActive(false);
     }
     public void QuitGame()
 	{
@@ -26,23 +31,35 @@ public class ShowControls : MonoBehaviour
 	}
     public void EnableControlsMenu()
 	{
-        Controls.SetActive(true);
-        RestofUI.SetActive(false);
+        if(ShowSettings == false)
+		{
+            Settings.SetActive(true);
+            RestofUI.SetActive(false);
+            LevelsUI.SetActive(false);
+            ShowSettings = true;
+        }
+		else
+		{
+            Settings.SetActive(false);
+            RestofUI.SetActive(true);
+            LevelsUI.SetActive(false);
+            ShowSettings = false;
+        }
 
 
 	}
-    public void DisableControlsMenu()
-	{
-        Controls.SetActive(false);
-        RestofUI.SetActive(true);
-    }
+    
     public void EnableLevels()
 	{
+        BackButton.SetActive(true);
+        SettingsButton.SetActive(false);
         LevelsUI.SetActive(true);
         RestofUI.SetActive(false);
 	}
     public void DisableLevels()
 	{
+        BackButton.SetActive(false);
+        SettingsButton.SetActive(true);
         LevelsUI.SetActive(false);
         RestofUI.SetActive(true);
     }
