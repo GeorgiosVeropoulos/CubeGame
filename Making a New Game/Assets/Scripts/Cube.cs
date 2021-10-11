@@ -51,19 +51,11 @@ public class Cube : MonoBehaviour
 			freecontrols = true;
 			mRigidbody.AddForce(Vector3.down);
 		}
-		
-	}
-	public void FixedUpdate()
-	{
-
-		
-		
-		//Debug.Log(detect.Direction);
 		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)
 		{
 			mRigidbody.freezeRotation = true;
 			dir = Vector3.zero;
-			
+
 			#region Normal Controls
 			if (Input.GetKey(KeyCode.W) || Up == true)
 			{
@@ -98,7 +90,7 @@ public class Cube : MonoBehaviour
 				//left = false;
 				//right = false;
 			}
-			
+
 		}
 		else
 		{
@@ -108,9 +100,18 @@ public class Cube : MonoBehaviour
 		//GODOWN();
 		//GOLEFT();
 		//GORIGHT();
-		
+
+	}
+	public void LateUpdate()
+	{
+
+
+
+		//Debug.Log(detect.Direction);
 
 		
+
+
 	}
 	public void GOUP()
 	{

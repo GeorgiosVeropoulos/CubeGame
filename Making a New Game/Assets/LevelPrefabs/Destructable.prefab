@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bd93629ab587c479bd42203a7e3cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeSize: 0.2
-  cubesInRow: 5
+  cubeSize: 0.3
+  cubesInRow: 3
   manager: {fileID: 0}
   prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
   explosionForce: 50
