@@ -91,4 +91,8 @@ public class ShowControls : MonoBehaviour
     {
         SceneManager.LoadScene(7);
     }
+    public void LoadLevel_8()
+    {
+        SceneManager.LoadScene(8);
+    }
 }
