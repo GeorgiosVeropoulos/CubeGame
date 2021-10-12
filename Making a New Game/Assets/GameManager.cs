@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 		times[6] = mydata.Timer6;
 		times[7] = mydata.Timer7;
 		times[8] = mydata.Timer8;
+		times[9] = mydata.Timer9;
 		Debug.Log("times1 = " + mydata.Timer1);
 
 	}
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
 			file = File.Create(Application.persistentDataPath + Data_Path);
 
 			LevelData data = new LevelData(times[1], times[2], times[3], times[4], times[5], times[6], times[7]
-				, times[8]);
+				, times[8], times[9]);
 			
 			bf.Serialize(file, data);
 		}
