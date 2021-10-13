@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5428721338103120530}
   - component: {fileID: 5428721338103120531}
   - component: {fileID: 5428721338103120532}
-  - component: {fileID: 5428721338103120533}
   - component: {fileID: 5428721338103120529}
   m_Layer: 0
   m_Name: CHECKPOINT
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5428721338103120535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.5232782, y: 0.0473795, z: -1.4465635}
   m_LocalScale: {x: 0.70359, y: 0.094759, z: 0.70359}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50e5d926d3d7a154ea5244956444b801, type: 2}
+  - {fileID: 2100000, guid: fe9b10be9c747414aa574e4da217baf2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,20 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5428721338103120533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428721338103120535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40997bac24d4eb44288b526ddd454f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshrend: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5428721338103120529
 MonoBehaviour:
   m_ObjectHideFlags: 0

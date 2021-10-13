@@ -463,7 +463,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 45507289}
-        m_MethodName: 
+        m_MethodName: LoadLevel_10
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6754,7 +6754,7 @@ MonoBehaviour:
   text: {fileID: 704425714}
   _level: 10
   bestimer: 0
-  Gamemanager: {fileID: 0}
+  Gamemanager: {fileID: 2070142081}
 --- !u!114 &704425714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20396,6 +20396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   times:
+  - 0
   - 0
   - 0
   - 0

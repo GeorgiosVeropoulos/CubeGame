@@ -8855,14 +8855,13 @@ GameObject:
   - component: {fileID: 2147054888}
   - component: {fileID: 2147054887}
   - component: {fileID: 2147054886}
-  - component: {fileID: 2147054885}
   - component: {fileID: 2147054884}
   m_Layer: 0
   m_Name: CHECKPOINT (1)
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &2147054883
 Transform:
@@ -8893,20 +8892,6 @@ MonoBehaviour:
   listToActivate:
   - {fileID: 816360873}
   lisToRemove: []
---- !u!114 &2147054885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147054882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40997bac24d4eb44288b526ddd454f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshrend: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &2147054886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8938,7 +8923,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32af5054e3428c54b80a7e49b5ce8211, type: 2}
+  - {fileID: 2100000, guid: fe9b10be9c747414aa574e4da217baf2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11459,7 +11444,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 32af5054e3428c54b80a7e49b5ce8211, type: 2}
+      objectReference: {fileID: 2100000, guid: fe9b10be9c747414aa574e4da217baf2, type: 2}
     - target: {fileID: 5428721338103120534, guid: 85eba2cd3dfd06549a72c839c69fae06,
         type: 3}
       propertyPath: m_RootOrder
@@ -11519,6 +11504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CHECKPOINT
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428721338103120535, guid: 85eba2cd3dfd06549a72c839c69fae06,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85eba2cd3dfd06549a72c839c69fae06, type: 3}

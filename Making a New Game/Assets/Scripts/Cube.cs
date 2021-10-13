@@ -46,10 +46,7 @@ public class Cube : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("CALLED");
-			mRigidbody.freezeRotation = false;
-			freecontrols = true;
-			mRigidbody.AddForce(Vector3.down);
+			Drop();
 		}
 		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)
 		{
@@ -101,6 +98,13 @@ public class Cube : MonoBehaviour
 		//GOLEFT();
 		//GORIGHT();
 
+	}
+	public void Drop()
+	{
+		Debug.Log("CALLED");
+		mRigidbody.freezeRotation = false;
+		freecontrols = true;
+		mRigidbody.AddForce(Vector3.down);
 	}
 	public void LateUpdate()
 	{
