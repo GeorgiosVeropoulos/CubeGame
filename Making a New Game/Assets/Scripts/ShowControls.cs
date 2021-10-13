@@ -103,4 +103,8 @@ public class ShowControls : MonoBehaviour
     {
         SceneManager.LoadScene(10);
     }
+    public void LoadLevel_11()
+	{
+        SceneManager.LoadScene(11);
+	}
 }

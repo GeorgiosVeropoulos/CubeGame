@@ -62,7 +62,7 @@ public class TimeCounter : MonoBehaviour
         {
             TimeofLevel = timer;
             
-            EndScreenTimer.GetComponent<TextMeshProUGUI>().text = "Your Time was:  " + TimeofLevel.ToString();
+            EndScreenTimer.GetComponent<TextMeshProUGUI>().text = "Your Time was:  " + TimeofLevel.ToString("F3");
             TimeTopLeft.SetActive(false);
             Timer.SetActive(false);
             TouchControls.SetActive(false);
