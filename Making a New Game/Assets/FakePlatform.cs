@@ -27,8 +27,7 @@ public class FakePlatform : MonoBehaviour
         {
             MeshRenderer thismeshrend = this.gameObject.GetComponent<MeshRenderer>();
             MeshRenderer playermeshrend = collision.gameObject.GetComponent<MeshRenderer>();
-            Debug.Log("Platform color is = " + thismeshrend.material.color);
-            Debug.Log("Player color is = " + playermeshrend.material.color);
+            
             if (thismeshrend.material.color == playermeshrend.material.color)
             {
                 explode();
