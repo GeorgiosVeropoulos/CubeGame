@@ -10,13 +10,14 @@ public class ShowControls : MonoBehaviour
     public GameObject BackButton;
     public GameObject RestofUI;
     public GameObject LevelsUI;
-   
+    public audiocontroller controller;
     private Scene currentscene;
     public bool ShowSettings = false;
     // Start is called before the first frame update
     private void Awake()
     {
         Time.timeScale = 1f;
+        
     }
     void Start()
     {
@@ -37,6 +38,7 @@ public class ShowControls : MonoBehaviour
             RestofUI.SetActive(false);
             LevelsUI.SetActive(false);
             ShowSettings = true;
+            controller.TrackAudio();
         }
 		else
 		{
@@ -107,4 +109,8 @@ public class ShowControls : MonoBehaviour
 	{
         SceneManager.LoadScene(11);
 	}
+    public void LoadLevel_12()
+    {
+        SceneManager.LoadScene(12);
+    }
 }
