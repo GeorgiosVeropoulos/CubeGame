@@ -22,34 +22,36 @@ public class ColorPicker : MonoBehaviour
 		{
             meshrend = this.gameObject.GetComponent<MeshRenderer>();
         }
-        
+        int randomcolorstart = (int)Random.Range(1, 5);
+        if (randomcolorstart == 1)
+        {
+            meshrend.material.color = Color.red;
+            _color = Color.red;
+
+        }
+        else if (randomcolorstart == 2)
+        {
+            meshrend.material.color = Color.blue;
+            _color = Color.blue;
+
+        }
+        else if (randomcolorstart == 3)
+        {
+            meshrend.material.color = Color.green;
+            _color = Color.green;
+        }
+        else if (randomcolorstart == 4)
+        {
+            meshrend.material.color = Color.yellow;
+            _color = Color.yellow;
+        }
     }
 
 
     private void Start()
     {
         
-        int randomcolorstart = (int)Random.Range(1, 5);
-        if (randomcolorstart == 1)
-        {
-            meshrend.material.color = Color.red;
-            
-        }
-        else if (randomcolorstart == 2)
-        {
-            meshrend.material.color = Color.blue;
-            
-        }
-        else if (randomcolorstart == 3)
-        {
-            meshrend.material.color = Color.green;
-            
-        }
-        else if (randomcolorstart == 4)
-        {
-            meshrend.material.color = Color.yellow;
-            
-        }
+       
     }
     // Update is called once per frame
     public  void OnCollisionEnter(Collision collision)

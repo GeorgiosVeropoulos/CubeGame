@@ -19,9 +19,10 @@ public class LevelData
 	private float timer10;
 	private float timer11;
 	private float timer12;
+	private float timer13;
 
 	public LevelData(float Level1, float Level2, float Level3, float Level4, float Level5, float Level6, float Level7
-		, float Level8, float Level9, float Level10, float Level11, float Level12)
+		, float Level8, float Level9, float Level10, float Level11, float Level12, float Level13)
 	{
 		timer1 = Level1;
 		timer2 = Level2;
@@ -35,6 +36,8 @@ public class LevelData
 		timer10 = Level10;
 		timer11 = Level11;
 		timer12 = Level12;
+		timer13 = Level13;
+
 	}
     public float Timer1 {
 		get {
@@ -130,6 +133,14 @@ public class LevelData
 		}
 		set {
 			timer12 = value;
+		}
+	}
+	public float Timer13 {
+		get {
+			return timer13;
+		}
+		set {
+			timer13 = value;
 		}
 	}
 

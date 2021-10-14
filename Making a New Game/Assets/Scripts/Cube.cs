@@ -40,12 +40,13 @@ public class Cube : MonoBehaviour
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hit.transform.gameObject.tag == "Floor")
 			{
-
+				Debug.Log("HIT");
 			}
 
 		}
 		else
 		{
+			Debug.Log("DIDNT HIT");
 			Drop();
 		}
 		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)
@@ -101,7 +102,7 @@ public class Cube : MonoBehaviour
 	}
 	public void Drop()
 	{
-		Debug.Log("CALLED");
+		//Debug.Log("CALLED");
 		mRigidbody.freezeRotation = false;
 		freecontrols = true;
 		mRigidbody.AddForce(Vector3.down);
