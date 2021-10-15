@@ -13,6 +13,8 @@ public class TimeCounter : MonoBehaviour
     public float TimeofLevel;
     [SerializeField]
     public float TimeofFinish;
+    [SerializeField]
+    //public int ScoreOfLevel;
     public GameObject txtmeshtext;
     
     public GameObject TimeTopLeft;
@@ -25,6 +27,7 @@ public class TimeCounter : MonoBehaviour
     public int IndexofScene;
     public int Level;
     public GameManager Gamemanager;
+    public ScoreManager Scoremanager;
     public TimerToStart TimerToStart;
 
     // private TextMesh theTextmesh;
@@ -33,10 +36,11 @@ public class TimeCounter : MonoBehaviour
         //Save();
         TouchControls.SetActive(true);
         Gamemanager = FindObjectOfType<GameManager>();
+        Scoremanager = FindObjectOfType<ScoreManager>();
         IndexofScene = SceneManager.GetActiveScene().buildIndex;
         Level = IndexofScene;
         TimeofFinish = Gamemanager.times[Level];
-        
+       // ScoreOfLevel = Scoremanager.scores[Level];
         
     }
 
@@ -74,20 +78,52 @@ public class TimeCounter : MonoBehaviour
 
             if (TimeofLevel <= TimeofFinish)
 			{
-
+                
                 Gamemanager.times[Level] = TimeofLevel;
-               
+                if (TimeofLevel > 60.0f)
+				{
+                    Scoremanager.scores[Level] = 25;
+                    Debug.Log("HERE1");
+
+                }
+                else if (TimeofLevel > 40.0f)
+				{
+                    Scoremanager.scores[Level] = 50;
+                    Debug.Log("HERE2");
+                }
+                else if (TimeofLevel > 1.0f)
+				{
+                    Scoremanager.scores[Level] =  100;
+                    Debug.Log("HERE3");
+                }
             }
 			else
 			{
                 if (TimeofFinish == 0)
                 {
                     Gamemanager.times[Level] = TimeofLevel;
+                    if (TimeofLevel > 60.0f)
+                    {
+                        Scoremanager.scores[Level] = 25;
+                        Debug.Log("HERE4");
+
+                    }
+                    else if (TimeofLevel > 40.0f)
+                    {
+                        Scoremanager.scores[Level] = 50;
+                        Debug.Log("HERE5");
+                    }
+                    else if (TimeofLevel > 1.0f)
+                    {
+                        Scoremanager.scores[Level] = 100;
+                        Debug.Log("HERE6");
+                    }
                 }
             }
 
 
             Gamemanager.SaveData();
+            Scoremanager.SaveData();
             //SavingandLoading();
         }
         if(TimerToStart.begingame == true)

@@ -21,6 +21,7 @@ public class Cube : MonoBehaviour
 	{
 		//SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
 		dir = Vector3.zero;
+		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 	}
 
 
@@ -40,7 +41,7 @@ public class Cube : MonoBehaviour
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hit.transform.gameObject.tag == "Floor")
 			{
-				Debug.Log("HIT");
+				//Debug.Log("HIT");
 			}
 
 		}
@@ -154,7 +155,7 @@ public class Cube : MonoBehaviour
 		down = false;
 		left = false;
 		right = false;
-		Debug.Log("HAND UP");
+		//Debug.Log("HAND UP");
 	}
 	public void onfingerdown()
 	{

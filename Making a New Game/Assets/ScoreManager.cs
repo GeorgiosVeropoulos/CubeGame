@@ -1,24 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 [System.Serializable]
-public class GameManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-	private static GameManager s_Instance = null;
-	private string Data_Path = "Cubes.cubes";
-	private LevelData mydata;
-	
-	public float[] times;
-	
+	private static ScoreManager s_Instance = null;
+	private string Data_Path = "scores.cubes";
+
+	private ScoreData Scoredata;
+
+	public int[] scores;
 	public void Awake()
 	{
-		
-		
+
+
 		//Debug.Log("DATA PATH IS " + Application.persistentDataPath + Data_Path);
 
 		if (s_Instance == null)
@@ -37,36 +36,36 @@ public class GameManager : MonoBehaviour
 	{
 		Application.targetFrameRate = 60;
 		LoadData();
-		times[1] = mydata.Timer1;
-		times[2] = mydata.Timer2;
-		times[3] = mydata.Timer3;
-		times[4] = mydata.Timer4;
-		times[5] = mydata.Timer5;
-		times[6] = mydata.Timer6;
-		times[7] = mydata.Timer7;
-		times[8] = mydata.Timer8;
-		times[9] = mydata.Timer9;
-		times[10] = mydata.Timer10;
-		times[11] = mydata.Timer11;
-		times[12] = mydata.Timer12;
-		times[13] = mydata.Timer13;
-		times[14] = mydata.Timer14;
-		times[15] = mydata.Timer15;
 
 
+		scores[1] = Scoredata.Score1;
+		scores[2] = Scoredata.Score2;
+		scores[3] = Scoredata.Score3;
+		scores[4] = Scoredata.Score4;
+		scores[5] = Scoredata.Score5;
+		scores[6] = Scoredata.Score6;
+		scores[7] = Scoredata.Score7;
+		scores[8] = Scoredata.Score8;
+		scores[9] = Scoredata.Score9;
+		scores[10] = Scoredata.Score10;
+		scores[11] = Scoredata.Score11;
+		scores[12] = Scoredata.Score12;
+		scores[13] = Scoredata.Score13;
+		scores[14] = Scoredata.Score14;
+		scores[15] = Scoredata.Score15;
 
 		
 	}
 	private void OnApplicationQuit()
 	{
 		Debug.Log("Application quitting");
-		
-		SaveData();
-		
-	}
-	
 
-	
+		SaveData();
+
+	}
+
+
+
 	public void SaveData()
 	{
 		FileStream file = null;
@@ -77,24 +76,24 @@ public class GameManager : MonoBehaviour
 
 			file = File.Create(Application.persistentDataPath + Data_Path);
 
-			LevelData data = new LevelData(times[1], times[2], times[3], times[4], times[5], times[6], times[7]
-				, times[8], times[9], times[10], times[11], times[12], times[13], times[14], times[15]);
 			
+			ScoreData score = new ScoreData(scores[1], scores[2], scores[3], scores[4], scores[5], scores[6], scores[7]
+				, scores[8], scores[9], scores[10], scores[11], scores[12], scores[13], scores[14], scores[15]);
 
-			bf.Serialize(file, data);
-			//this is new
 			
+			//this is new
+			bf.Serialize(file, score);
 		}
 		catch (Exception e)
 		{
-			if(e != null)
+			if (e != null)
 			{
-				
+
 			}
 		}
 		finally
 		{
-			if(file != null)
+			if (file != null)
 			{
 				file.Close();
 			}
@@ -110,8 +109,8 @@ public class GameManager : MonoBehaviour
 			BinaryFormatter bf = new BinaryFormatter();
 
 			file = File.Open(Application.persistentDataPath + Data_Path, FileMode.Open);
-			mydata = bf.Deserialize(file) as LevelData;
 			
+			Scoredata = bf.Deserialize(file) as ScoreData;
 		}
 		catch (Exception e)
 		{
@@ -119,10 +118,11 @@ public class GameManager : MonoBehaviour
 		}
 		finally
 		{
-			if(file!= null)
+			if (file != null)
 			{
 				file.Close();
 			}
 		}
 	}
 }
+

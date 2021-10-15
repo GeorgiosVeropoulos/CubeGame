@@ -10,8 +10,12 @@ public class ShowControls : MonoBehaviour
     public GameObject BackButton;
     public GameObject RestofUI;
     public GameObject LevelsUI;
+    public GameObject ScoresUI;
+    public GameObject ShowScoreButton;
+    public GameObject ShowLevelsButton;
     public audiocontroller controller;
     private Scene currentscene;
+    public TotalPoints points;
     public bool ShowSettings = false;
     // Start is called before the first frame update
     private void Awake()
@@ -57,6 +61,9 @@ public class ShowControls : MonoBehaviour
         SettingsButton.SetActive(false);
         LevelsUI.SetActive(true);
         RestofUI.SetActive(false);
+        ShowScoreButton.SetActive(true);
+        ShowLevelsButton.SetActive(false);
+
 	}
     public void DisableLevels()
 	{
@@ -64,6 +71,30 @@ public class ShowControls : MonoBehaviour
         SettingsButton.SetActive(true);
         LevelsUI.SetActive(false);
         RestofUI.SetActive(true);
+        ShowScoreButton.SetActive(false);
+        ShowLevelsButton.SetActive(false);
+        ScoresUI.SetActive(false);
+    }
+    public void EnableScore()
+	{
+        BackButton.SetActive(true);
+        SettingsButton.SetActive(false);
+        LevelsUI.SetActive(false);
+        RestofUI.SetActive(false);
+        ScoresUI.SetActive(true);
+        ShowLevelsButton.SetActive(true);
+        //points.TotalScore();
+    }
+    public void DisableScore()
+	{
+
+        BackButton.SetActive(true);
+        SettingsButton.SetActive(false);
+        LevelsUI.SetActive(true);
+        RestofUI.SetActive(false);
+        ScoresUI.SetActive(false);
+        ShowLevelsButton.SetActive(false);
+        ShowScoreButton.SetActive(true);
     }
     public void LoadLevel_1()
 	{
@@ -120,5 +151,9 @@ public class ShowControls : MonoBehaviour
     public void LoadLevel_14()
     {
         SceneManager.LoadScene(14);
+    }
+    public void LoadLevel_15()
+    {
+        SceneManager.LoadScene(15);
     }
 }
