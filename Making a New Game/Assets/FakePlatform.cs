@@ -16,10 +16,7 @@ public class FakePlatform : MonoBehaviour
     public int Zextra = 1;
     public int Xextra = 1;
     public int Yextra = 1;
-	private void Start()
-	{
-        
-	}
+	
 
 	private void OnCollisionEnter(Collision collision)
     {

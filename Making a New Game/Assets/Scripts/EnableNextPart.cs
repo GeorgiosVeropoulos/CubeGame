@@ -8,38 +8,41 @@ public class EnableNextPart : MonoBehaviour
 	public GameObject[] lisToRemove;
 	public void Awake()
 	{
-		foreach(GameObject off in listToActivate)
+		foreach (GameObject off in listToActivate)
 		{
 			off.SetActive(false);
 		}
-		foreach(GameObject off in lisToRemove)
+		foreach (GameObject off in lisToRemove)
 		{
 			off.SetActive(true);
 		}
-		
+		//for(int i =0; i < listToActivate.Length; i++)
+		//{
+		//	listToActivate[i].SetActive(false);
+		//}
+		//for (int j = 0; j < lisToRemove.Length; j++)
+		//{
+		//	listToActivate[j].SetActive(true);
+		//}
 	}
 	// Start is called before the first frame update
 	public void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.name == "Player")
 		{
-			
-			
-			foreach(GameObject go in listToActivate)
+
+
+			foreach (GameObject off in listToActivate)
 			{
-				go.SetActive(true);
+				off.SetActive(true);
 			}
-			foreach (GameObject go in lisToRemove)
+			foreach (GameObject off in lisToRemove)
 			{
-				go.SetActive(false);
+				off.SetActive(false);
 			}
 			Destroy(this.gameObject);
 		}
 	}
 
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
+	
 }

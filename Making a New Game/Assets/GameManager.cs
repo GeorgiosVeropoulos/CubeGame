@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 	}
 	private void Start()
 	{
-		Application.targetFrameRate = 60;
+		//Application.targetFrameRate = 60;
 		LoadData();
 		times[1] = mydata.Timer1;
 		times[2] = mydata.Timer2;

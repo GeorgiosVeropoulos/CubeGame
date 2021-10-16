@@ -22,6 +22,7 @@ public class Cube : MonoBehaviour
 		//SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
 		dir = Vector3.zero;
 		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+		
 	}
 
 

@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
 	}
 	private void Start()
 	{
-		Application.targetFrameRate = 60;
+		
 		LoadData();
 
 

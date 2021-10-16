@@ -13,9 +13,5 @@ public class CollorCopy : MonoBehaviour
         thismesh.material.color = cubetoCopy.GetComponent<MeshRenderer>().material.color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
