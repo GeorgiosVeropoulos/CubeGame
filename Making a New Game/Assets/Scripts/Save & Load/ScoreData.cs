@@ -7,6 +7,7 @@ using System;
 [System.Serializable]
 public class ScoreData
 {
+	private int score0;
 	private int score1;
 	private int score2;
 	private int score3;
@@ -24,10 +25,11 @@ public class ScoreData
 	private int score15;
 	private int score16;
 
-	public ScoreData(int Score1, int Score2, int Score3, int Score4, int Score5, int Score6, int Score7
+	public ScoreData(int Score0, int Score1, int Score2, int Score3, int Score4, int Score5, int Score6, int Score7
 		, int Score8, int Score9, int Score10, int Score11, int Score12, int Score13, int Score14, int Score15
 		,int Score16)
 	{
+		score0 = Score0;
 		score1 = Score1;
 		score2 = Score2;
 		score3 = Score3;
@@ -45,6 +47,14 @@ public class ScoreData
 		score15 = Score15;
 		score16 = Score16;
 
+	}
+	public int Score0 {
+		get {
+			return score0;
+		}
+		set {
+			score0 = value;
+		}
 	}
 	public int Score1 {
 		get {

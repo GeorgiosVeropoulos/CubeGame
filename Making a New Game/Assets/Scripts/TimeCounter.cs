@@ -29,6 +29,7 @@ public class TimeCounter : MonoBehaviour
     public GameManager Gamemanager;
     public ScoreManager Scoremanager;
     public TimerToStart TimerToStart;
+    public bool redeem = false;
 
     // private TextMesh theTextmesh;
     public void Awake()
@@ -81,19 +82,35 @@ public class TimeCounter : MonoBehaviour
                 
                 Gamemanager.times[Level] = TimeofLevel;
                 if (TimeofLevel > 60.0f)
-				{
+                {
                     Scoremanager.scores[Level] = 25;
+                    if (redeem == false)
+					{
+                        Scoremanager.scores[0] += 25;
+                        redeem = true;
+                    }
+                   
                     Debug.Log("HERE1");
 
                 }
                 else if (TimeofLevel > 40.0f)
 				{
                     Scoremanager.scores[Level] = 50;
+                    if (redeem == false)
+                    {
+                        Scoremanager.scores[0] += 50;
+                        redeem = true;
+                    }
                     Debug.Log("HERE2");
                 }
                 else if (TimeofLevel > 1.0f)
 				{
                     Scoremanager.scores[Level] =  100;
+                    if (redeem == false)
+                    {
+                        Scoremanager.scores[0] += 100;
+                        redeem = true;
+                    }
                     Debug.Log("HERE3");
                 }
             }
@@ -105,17 +122,32 @@ public class TimeCounter : MonoBehaviour
                     if (TimeofLevel > 60.0f)
                     {
                         Scoremanager.scores[Level] = 25;
+                        if (redeem == false)
+                        {
+                            Scoremanager.scores[0] += 25;
+                            redeem = true;
+                        }
                         Debug.Log("HERE4");
 
                     }
                     else if (TimeofLevel > 40.0f)
                     {
                         Scoremanager.scores[Level] = 50;
+                        if (redeem == false)
+                        {
+                            Scoremanager.scores[0] += 50;
+                            redeem = true;
+                        }
                         Debug.Log("HERE5");
                     }
                     else if (TimeofLevel > 1.0f)
                     {
                         Scoremanager.scores[Level] = 100;
+                        if (redeem == false)
+                        {
+                            Scoremanager.scores[0] += 100;
+                            redeem = true;
+                        }
                         Debug.Log("HERE6");
                     }
                 }

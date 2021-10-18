@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
 		
 		LoadData();
 
-
+		scores[0] = Scoredata.Score0;
 		scores[1] = Scoredata.Score1;
 		scores[2] = Scoredata.Score2;
 		scores[3] = Scoredata.Score3;
@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
 			file = File.Create(Application.persistentDataPath + Data_Path);
 
 			
-			ScoreData score = new ScoreData(scores[1], scores[2], scores[3], scores[4], scores[5], scores[6], scores[7]
+			ScoreData score = new ScoreData(scores[0], scores[1], scores[2], scores[3], scores[4], scores[5], scores[6], scores[7]
 				, scores[8], scores[9], scores[10], scores[11], scores[12], scores[13], scores[14], scores[15], scores[16]);
 
 			
