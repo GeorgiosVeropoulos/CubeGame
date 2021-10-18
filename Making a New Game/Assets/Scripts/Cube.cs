@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class Cube : MonoBehaviour
 {
     public float tumblingDuration = 0.2f;
@@ -15,20 +16,23 @@ public class Cube : MonoBehaviour
 	public bool down = false;
 	public bool left = false;
 	public bool right = false;
-	
+	private SkinManager skinmanager;
 
 	private void Awake()
 	{
 		//SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
 		dir = Vector3.zero;
 		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-		
+		skinmanager = FindObjectOfType<SkinManager>();
 	}
 
 
 	public void Start()
 	{
-        mRigidbody = GetComponent<Rigidbody>();
+		// THIS CHANGES THE SKIN OF PLAYER
+		this.gameObject.GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", skinmanager.SkingToUse);
+		
+		mRigidbody = GetComponent<Rigidbody>();
 		freecontrols = false;
 		ONFINGERUP();
 	}

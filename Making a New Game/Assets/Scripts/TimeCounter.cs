@@ -28,6 +28,7 @@ public class TimeCounter : MonoBehaviour
     public int Level;
     public GameManager Gamemanager;
     public ScoreManager Scoremanager;
+    
     public TimerToStart TimerToStart;
     public bool redeem = false;
 
@@ -38,6 +39,7 @@ public class TimeCounter : MonoBehaviour
         TouchControls.SetActive(true);
         Gamemanager = FindObjectOfType<GameManager>();
         Scoremanager = FindObjectOfType<ScoreManager>();
+        
         IndexofScene = SceneManager.GetActiveScene().buildIndex;
         Level = IndexofScene;
         TimeofFinish = Gamemanager.times[Level];
