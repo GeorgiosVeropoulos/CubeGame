@@ -484,7 +484,9 @@ MonoBehaviour:
   IndexofScene: 1
   Level: 1
   Gamemanager: {fileID: 0}
+  Scoremanager: {fileID: 0}
   TimerToStart: {fileID: 1640832158}
+  redeem: 0
 --- !u!1 &387541963
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +613,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4b691b6edac740b4195451693abce79a, type: 2}
+  - {fileID: 2100000, guid: e2782bd09fb749e4f8c457cb9c8cc6cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -675,6 +677,7 @@ MonoBehaviour:
   down: 0
   left: 0
   right: 0
+  testing: {fileID: 2100000, guid: 9418a5fcbafe84543998bd7c831a9ee1, type: 2}
 --- !u!54 &482693816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8000,7 +8003,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh60228
+  m_Name: pb_Mesh29688
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

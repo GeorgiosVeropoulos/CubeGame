@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SkinManager : MonoBehaviour
 {
-    public Texture SkingToUse;
+    public Material SkingToUse;
     
     // Start is called before the first frame update
     void Start()

@@ -2581,10 +2581,20 @@ MonoBehaviour:
   showing: {fileID: 265551690}
   numbertoshow: 0
   SkinShowing: {fileID: 0}
-  Skin1: {fileID: 2800000, guid: c0a678da95aa5394583ee51ad14e856e, type: 3}
-  Skin2: {fileID: 2800000, guid: 14bbbb1f865814344ae1265d88a87f83, type: 3}
-  skin1: {fileID: 21300000, guid: c0a678da95aa5394583ee51ad14e856e, type: 3}
-  skin2: {fileID: 21300000, guid: ad51a021052aeea4abee57d998f201d9, type: 3}
+  skins:
+  - {fileID: 2100000, guid: 4b691b6edac740b4195451693abce79a, type: 2}
+  - {fileID: 2100000, guid: 43dec157f08fab14fb6590994dd51a0a, type: 2}
+  - {fileID: 2100000, guid: 4012a5f13b5384144983088ca6a87c19, type: 2}
+  - {fileID: 2100000, guid: 9418a5fcbafe84543998bd7c831a9ee1, type: 2}
+  - {fileID: 2100000, guid: ebabfdf81fc72414f9921cfe2ed4b652, type: 2}
+  - {fileID: 2100000, guid: e2782bd09fb749e4f8c457cb9c8cc6cd, type: 2}
+  spriteskin:
+  - {fileID: 21300000, guid: bec6ccdf552d9844a87d0742f5f0d044, type: 3}
+  - {fileID: 21300000, guid: ad51a021052aeea4abee57d998f201d9, type: 3}
+  - {fileID: 21300000, guid: c0a678da95aa5394583ee51ad14e856e, type: 3}
+  - {fileID: 21300000, guid: fc734a71fbcd6094287de7c914465ce4, type: 3}
+  - {fileID: 21300000, guid: 273136e850525d84493e4402c0ac7808, type: 3}
+  - {fileID: 21300000, guid: 3b0eddc8a70bebf4bb8864a1cc68bbee, type: 3}
   skinmanager: {fileID: 0}
 --- !u!1 &249695144
 GameObject:
@@ -11264,10 +11274,10 @@ RectTransform:
   m_Father: {fileID: 2046969347}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -351, y: 205}
-  m_SizeDelta: {x: 73.526245, y: 25.697296}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -401, y: 255}
+  m_SizeDelta: {x: -26.473755, y: -74.302704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750437518
 MonoBehaviour:
@@ -11491,7 +11501,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780267484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -6.36}
   m_LocalScale: {x: 13.293655, y: 3.068315, z: 13.293655}
   m_Children: []
   m_Father: {fileID: 2046969347}
@@ -11515,7 +11525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7372549}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4627451}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -21664,7 +21674,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46124
+  m_Name: pb_Mesh33558
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

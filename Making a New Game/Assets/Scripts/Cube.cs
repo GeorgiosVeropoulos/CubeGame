@@ -17,12 +17,13 @@ public class Cube : MonoBehaviour
 	public bool left = false;
 	public bool right = false;
 	private SkinManager skinmanager;
+	//public Material testing;
 
 	private void Awake()
 	{
 		//SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
 		dir = Vector3.zero;
-		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+		//this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 		skinmanager = FindObjectOfType<SkinManager>();
 	}
 
@@ -30,8 +31,9 @@ public class Cube : MonoBehaviour
 	public void Start()
 	{
 		// THIS CHANGES THE SKIN OF PLAYER
-		this.gameObject.GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", skinmanager.SkingToUse);
-		
+		//this.gameObject.GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", skinmanager.SkingToUse);
+		this.gameObject.GetComponent<MeshRenderer>().material = skinmanager.SkingToUse;
+		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 		mRigidbody = GetComponent<Rigidbody>();
 		freecontrols = false;
 		ONFINGERUP();
