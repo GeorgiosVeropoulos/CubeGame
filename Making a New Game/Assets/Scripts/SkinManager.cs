@@ -44,7 +44,7 @@ public class SkinManager : MonoBehaviour
 		
 
 		skins[1] = SkinData.Skin1;
-		Debug.Log(skins[1]);
+		
 		skins[2] = SkinData.Skin2;
 		skins[3] = SkinData.Skin3;
 		skins[4] = SkinData.Skin4;
@@ -52,8 +52,7 @@ public class SkinManager : MonoBehaviour
 	}
 	private void OnApplicationQuit()
 	{
-		Debug.Log("Application quitting");
-
+		
 		SaveData();
 
 	}

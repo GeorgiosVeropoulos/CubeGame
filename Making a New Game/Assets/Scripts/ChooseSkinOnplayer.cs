@@ -113,7 +113,7 @@ public class ChooseSkinOnplayer : MonoBehaviour
 				skinmanager.SkingToUse = skins[5];
 			}
 			skinmanager.numbertoHold = 5;
-			nameofskintext.text = "Wood";
+			nameofskintext.text = "IronBox";
 			priceofskintext.text = "Price = " + priceofskin[5].ToString();
 		}
 
