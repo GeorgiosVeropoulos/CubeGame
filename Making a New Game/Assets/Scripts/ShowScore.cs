@@ -10,15 +10,18 @@ public class ShowScore : MonoBehaviour
 	public int _level;
 	public float bestscore;
 	public ScoreManager scoremanager;
-
+	
 	public void Awake()
 	{
 		scoremanager = FindObjectOfType<GameManager>().GetComponent<ScoreManager>();
+	
 	}
-	void Start()
+	public void Start()
 	{
 
 		bestscore = scoremanager.scores[_level];
 		text.text = scoremanager.scores[_level].ToString();
+
+
 	}
 }

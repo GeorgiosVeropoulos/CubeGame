@@ -24,7 +24,7 @@ public class ChooseSkinOnplayer : MonoBehaviour
 	public void Awake()
 	{
 		
-		showing.material = null;
+		//showing.material = null;
 		skinmanager = FindObjectOfType<SkinManager>();
 		scoremanager = FindObjectOfType<ScoreManager>();
 	}
