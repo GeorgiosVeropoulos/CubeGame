@@ -10,6 +10,7 @@ public class TotalPoints : MonoBehaviour
     public TextMeshProUGUI text;
 	public int scores;
     public ScoreManager scoremanager;
+	public SkinManager skinmanager;
 	public int totalpoints;
 	public int currentscore;
 	public int buyitem = 100;
@@ -41,15 +42,16 @@ public class TotalPoints : MonoBehaviour
 		text.text = totalpoints.ToString();
 		
 	}
-	public void Buy()
-	{
-		if(totalpoints >= buyitem)
-		{
-			totalpoints -= buyitem;
-			Debug.Log(totalpoints);
-			scoremanager.scores[0] = totalpoints;
-			scoremanager.SaveData();
-		}
+	//public void Buy()
+	//{
 		
-	}
+	//	if(totalpoints >= buyitem)
+	//	{
+	//		totalpoints -= buyitem;
+	//		Debug.Log(totalpoints);
+	//		scoremanager.scores[0] = totalpoints;
+	//		scoremanager.SaveData();
+	//	}
+		
+	//}
 }
