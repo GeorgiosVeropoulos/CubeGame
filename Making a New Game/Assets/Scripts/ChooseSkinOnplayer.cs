@@ -91,7 +91,7 @@ public class ChooseSkinOnplayer : MonoBehaviour
 				skinmanager.SkingToUse = skins[3];
 			}
 			skinmanager.numbertoHold = 3;
-			nameofskintext.text = "Lava";
+			nameofskintext.text = "The Missing Data";
 			priceofskintext.text = "Price = " + priceofskin[3].ToString();
 		}
 		if(numbertoshow == 4)
@@ -102,7 +102,7 @@ public class ChooseSkinOnplayer : MonoBehaviour
 				skinmanager.SkingToUse = skins[4];
 			}
 			skinmanager.numbertoHold = 4;
-			nameofskintext.text = "Tiles";
+			nameofskintext.text = "Hole";
 			priceofskintext.text = "Price = " + priceofskin[4].ToString();
 		}
 		if(numbertoshow == 5)

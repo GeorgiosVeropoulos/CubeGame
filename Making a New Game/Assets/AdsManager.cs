@@ -13,6 +13,8 @@ public class AdsManager : MonoBehaviour , IUnityAdsListener
 	// Start is called before the first frame update
 
 	public ScoreManager scoremanager;
+	public bool rewardstoper;
+	public int scoreholder;
     void Start()
     {
 		scoremanager = FindObjectOfType<ScoreManager>();
@@ -26,7 +28,10 @@ public class AdsManager : MonoBehaviour , IUnityAdsListener
 	{
 		if (Advertisement.IsReady("Rewarded"))
 		{
-            Advertisement.Show("Rewarded");
+			Debug.Log("rewarded player ");
+			
+			Advertisement.Show("Rewarded");
+
 		}
 		else
 		{
@@ -36,17 +41,18 @@ public class AdsManager : MonoBehaviour , IUnityAdsListener
 
 	public void OnUnityAdsReady(string placementId)
 	{
-		Debug.Log("Ad Ready");
+		//Debug.Log("Ad Ready");
 	}
 
 	public void OnUnityAdsDidError(string message)
 	{
-		Debug.Log("ERROR + " + message);
+		//Debug.Log("ERROR + " + message);
 	}
 
 	public void OnUnityAdsDidStart(string placementId)
 	{
 		Debug.Log("VIDEO STARTED");
+		rewardstoper = false;
 	}
 
 	public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
@@ -54,9 +60,18 @@ public class AdsManager : MonoBehaviour , IUnityAdsListener
 		if(placementId == "Rewarded" && showResult == ShowResult.Finished)
 		{
 			Debug.Log("Player Should be rewarded");
-			scoremanager.scores[0] += 100;
+			scoremanager.scores[0] = scoremanager.scores[0] + 100;
 			scoremanager.SaveData();
 			Debug.Log(scoremanager.scores[0]);
+
+
+
+
 		}
+		
+	}
+	public void OnDestroy()
+	{
+		Advertisement.RemoveListener(this);
 	}
 }

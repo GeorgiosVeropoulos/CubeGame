@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ShowControls : MonoBehaviour
 {
-    public GameObject Settings;
-    public GameObject SettingsButton;
+    
     public GameObject BackButton;
     public GameObject RestofUI;
     public GameObject LevelsUI;
@@ -15,7 +14,7 @@ public class ShowControls : MonoBehaviour
     public GameObject SkinsUI;
     public GameObject ShopButton;
     public GameObject BackButtonShop;
-    public GameObject SettingsUI;
+    
     public GameObject SkinsPlaceHolder;
     public audiocontroller controller;
     private Scene currentscene;
@@ -42,7 +41,7 @@ public class ShowControls : MonoBehaviour
 	{
         if(ShowSettings == false)
 		{
-            Settings.SetActive(true);
+            
             RestofUI.SetActive(false);
             LevelsUI.SetActive(false);
             ShowSettings = true;
@@ -50,7 +49,7 @@ public class ShowControls : MonoBehaviour
         }
 		else
 		{
-            Settings.SetActive(false);
+            
             RestofUI.SetActive(true);
             LevelsUI.SetActive(false);
             ShowSettings = false;
@@ -62,7 +61,7 @@ public class ShowControls : MonoBehaviour
     public void EnableLevels()
 	{
         BackButton.SetActive(true);
-        SettingsButton.SetActive(false);
+       
         LevelsUI.SetActive(true);
         RestofUI.SetActive(false);
         SkinsPlaceHolder.SetActive(false);
@@ -71,7 +70,7 @@ public class ShowControls : MonoBehaviour
     public void DisableLevels()
 	{
         BackButton.SetActive(false);
-        SettingsButton.SetActive(true);
+       
         LevelsUI.SetActive(false);
         RestofUI.SetActive(true);
         SkinsPlaceHolder.SetActive(true);
@@ -80,7 +79,7 @@ public class ShowControls : MonoBehaviour
     public void EnableScore()
 	{
         BackButton.SetActive(true);
-        SettingsButton.SetActive(false);
+        
         LevelsUI.SetActive(false);
         RestofUI.SetActive(false);
         ScoresUI.SetActive(true);
@@ -91,7 +90,7 @@ public class ShowControls : MonoBehaviour
 	{
 
         BackButton.SetActive(true);
-        SettingsButton.SetActive(false);
+        
         LevelsUI.SetActive(true);
         RestofUI.SetActive(false);
         ScoresUI.SetActive(false);
@@ -99,24 +98,22 @@ public class ShowControls : MonoBehaviour
     }
     public void ShowShop()
 	{
-        SettingsUI.SetActive(false);
+        
         RestofUI.SetActive(false);
         ShopButton.SetActive(false);
         BackButtonShop.SetActive(true);
         SkinsUI.SetActive(true);
         LevelsUI.SetActive(false);
-        SettingsButton.SetActive(false);
-        Settings.SetActive(false);
+        
 	}
     public void BackButtonofShop()
 	{
-        SettingsUI.SetActive(true);
+       
         RestofUI.SetActive(true);
         ShopButton.SetActive(true);
         BackButtonShop.SetActive(false);
         SkinsUI.SetActive(false);
-        
-        SettingsButton.SetActive(true);
+      
     }
     public void LoadLevel_1()
 	{
