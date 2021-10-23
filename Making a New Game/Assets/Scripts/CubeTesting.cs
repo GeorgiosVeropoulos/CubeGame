@@ -18,8 +18,16 @@ public class CubeTesting : MonoBehaviour
 	public bool right = false;
 	public Vector3 endPosition;
 	public Vector3 startPosition;
-	public bool isDropping = false;
-	public bool goingright = false;
+	[SerializeField]
+	private bool isDropping = false;
+	[SerializeField]
+	private bool goingright = false;
+	[SerializeField]
+	private bool goingleft = false;
+	[SerializeField]
+	private bool goingforward = false;
+	[SerializeField]
+	private bool goingdown = false;
 	//public Material testing;
 
 	private void Awake()
@@ -46,7 +54,10 @@ public class CubeTesting : MonoBehaviour
 		currentpos = this.gameObject.transform.position;
 		// CHECKS IF WE ARE ON THE FLOOR
 		RaycastHit hit;
-		RaycastHit hittwo;
+		RaycastHit hitright;
+		RaycastHit hitleft;
+		RaycastHit hitforward;
+		RaycastHit hitback;
 		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 4f))
 		{
 			
@@ -78,34 +89,99 @@ public class CubeTesting : MonoBehaviour
 			
 			
 		}
-
-		if (Physics.Raycast(transform.position, -Vector3.left, out hittwo, 4f))
+		// this does right movmenet
+		if (Physics.Raycast(transform.position, -Vector3.left, out hitright, 4f))
 		{
-			Debug.DrawRay(transform.position, -Vector3.left * hittwo.distance, Color.blue);
+			Debug.DrawRay(transform.position, -Vector3.left * hitright.distance, Color.blue);
 			//Debug.Log(hit.transform.gameObject.tag);
-			if (hittwo.transform.gameObject.tag == "Floor")
+			if (hitright.transform.gameObject.tag == "Floor")
 			{
-				if (hittwo.distance <= 0.5 && isDropping == false)
+				if (hitright.distance <= 0.6 && isDropping == false)
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
 					//freecontrols = false;
 					goingright = true;
-					//if (Input.GetKey(KeyCode.D) || right == true)
-					//{
-					//	freecontrols = true;
-					//	Vector3 positiontohold = new Vector3(currentpos.x, currentpos.y, currentpos.z);
-					//	Debug.Log(positiontohold);
-					//	Debug.Log("Moving On Top");
-					//	this.gameObject.transform.position = new Vector3(positiontohold.x + 1, positiontohold.y + 1f, positiontohold.z);
-					//	goingright = true;
-					//	this.gameObject.transform.position = new Vector3(positiontohold.x - 1f, positiontohold.y + 1f, positiontohold.z);
-
-					//}
+					
 				}
 				else
 				{
 					goingright = false;
+				}
+
+			}
+
+
+		}
+
+		// this does left movement
+		if (Physics.Raycast(transform.position, -Vector3.right, out hitleft, 4f))
+		{
+			Debug.DrawRay(transform.position, -Vector3.right * hitleft.distance, Color.red);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitleft.transform.gameObject.tag == "Floor")
+			{
+				if (hitleft.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+
+					//freecontrols = false;
+					goingleft = true;
+					
+				}
+				else
+				{
+					goingleft = false;
+				}
+
+			}
+
+
+		}
+
+		// this does forward check movement
+
+		if (Physics.Raycast(transform.position, -Vector3.back, out hitforward, 4f))
+		{
+			Debug.DrawRay(transform.position, -Vector3.back * hitforward.distance, Color.green);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitforward.transform.gameObject.tag == "Floor")
+			{
+				if (hitforward.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+
+					//freecontrols = false;
+					goingforward = true;
+
+				}
+				else
+				{
+					goingforward = false;
+				}
+
+			}
+
+
+		}
+		// this does back movement
+		if (Physics.Raycast(transform.position, -Vector3.forward, out hitback, 4f))
+		{
+			Debug.DrawRay(transform.position, -Vector3.forward * hitback.distance, Color.green);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitback.transform.gameObject.tag == "Floor")
+			{
+				if (hitback.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+
+					//freecontrols = false;
+					goingdown = true;
+
+				}
+				else
+				{
+					goingdown = false;
 				}
 
 			}
@@ -119,30 +195,65 @@ public class CubeTesting : MonoBehaviour
 			dir = Vector3.zero;
 
 			#region Normal Controls
-			if (Input.GetKey(KeyCode.W) || Up == true)
+			
+			// W KEY
+			if (goingforward == true)
 			{
-				dir = Vector3.forward;
+				if (Input.GetKey(KeyCode.W) || Up == true)
+				{
+					dir = Vector3.forward;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingforward = false;
+				}
+			}
+			else if (goingforward == false)
+			{
+				if (Input.GetKey(KeyCode.W) || Up == true)
+				{
+					dir = Vector3.forward;
+				}
+			}
+			// S KEY
+			if (goingdown == true)
+			{
+				if (Input.GetKey(KeyCode.S) || down == true)
+				{
+					dir = Vector3.back;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingdown = false;
+				}
+			}
+			else if (goingdown == false)
+			{
+				if (Input.GetKey(KeyCode.S) || down == true)
+				{
+					dir = Vector3.back;
+				}
 			}
 
-
-			if (Input.GetKey(KeyCode.S) || down == true)
+			// A KEY
+			if (goingleft == true)
 			{
-				dir = Vector3.back;
+				if (Input.GetKey(KeyCode.A) || left == true)
+				{
+					dir = Vector3.left;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingleft = false;
+				}
+			}
+			else if (goingleft == false)
+			{
+				if (Input.GetKey(KeyCode.A) || left == true)
+				{
+					dir = Vector3.left;
+				}
 			}
 
-
-			if (Input.GetKey(KeyCode.A) || left == true)
-			{
-				dir = Vector3.left;
-			}
-			//if (Input.GetKey(KeyCode.D) || right == true)
-			//{
-			//	dir = Vector3.right;
-			//	Debug.Log("PRESSED");
-
-
-			//}
-			if(goingright == true)
+			// D KEY
+			if (goingright == true)
 			{
 				if (Input.GetKey(KeyCode.D) || right == true)
 				{
