@@ -41,7 +41,7 @@ public class CubeTesting : MonoBehaviour
 		freecontrols = false;
 		ONFINGERUP();
 	}
-	public void Update()
+	public void FixedUpdate()
 	{
 		currentpos = this.gameObject.transform.position;
 		// CHECKS IF WE ARE ON THE FLOOR
@@ -135,16 +135,30 @@ public class CubeTesting : MonoBehaviour
 			{
 				dir = Vector3.left;
 			}
+			//if (Input.GetKey(KeyCode.D) || right == true)
+			//{
+			//	dir = Vector3.right;
+			//	Debug.Log("PRESSED");
 
-			if (Input.GetKey(KeyCode.D) || right == true)
+
+			//}
+			if(goingright == true)
 			{
-				dir = Vector3.right;
-				Debug.Log("PRESSED");
-				
-
+				if (Input.GetKey(KeyCode.D) || right == true)
+				{
+					dir = Vector3.right;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingright = false;
+				}
 			}
-
-
+			else if (goingright == false)
+			{
+				if (Input.GetKey(KeyCode.D) || right == true)
+				{
+					dir = Vector3.right;
+				}
+			}
 
 			#endregion
 			if (dir != Vector3.zero && !isTumbling)
@@ -237,33 +251,8 @@ public class CubeTesting : MonoBehaviour
 		var startRotation = transform.rotation;
 		var endRotation = Quaternion.AngleAxis(90.0f, rotAxis) * startRotation;
 
-		//var startPosition = transform.position;
-		
-		if (goingright == true)
-		{
-			startPosition = transform.position;
-			if (Input.GetKey(KeyCode.D) || right == true)
-			{
-				
-				//this.gameObject.transform.position = transform.position + new Vector3(0f, 1f, 0f);
-				//startPosition.y = transform.position.y + 1;
-				endPosition = startPosition + direction;
-				endPosition.y = transform.position.y + 1;
-
-			}
-			else
-			{
-				goingright = false;
-				
-				endPosition = transform.position + direction;
-			}
-			
-		}
-		else
-		{
-			startPosition = transform.position;
-			endPosition = transform.position + direction;
-		}
+		var startPosition = transform.position;
+		var endPosition = transform.position + direction;
 		
 		
 		var rotSpeed = 90.0f / tumblingDuration;
@@ -287,5 +276,5 @@ public class CubeTesting : MonoBehaviour
 
 		isTumbling = false;
 	}
-
+	
 }
