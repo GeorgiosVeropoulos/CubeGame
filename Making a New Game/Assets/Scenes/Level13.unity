@@ -7399,7 +7399,9 @@ MonoBehaviour:
   IndexofScene: 13
   Level: 13
   Gamemanager: {fileID: 0}
+  Scoremanager: {fileID: 0}
   TimerToStart: {fileID: 1640832158}
+  redeem: 0
 --- !u!1001 &379188476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8010,11 +8012,19 @@ MonoBehaviour:
   Thrust: 1
   freecontrols: 0
   timetostart: {fileID: 1640832158}
+  currentpos: {x: 0, y: 0, z: 0}
   dir: {x: 0, y: 0, z: 0}
   Up: 0
   down: 0
   left: 0
   right: 0
+  endPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  isDropping: 0
+  goingright: 0
+  goingleft: 0
+  goingforward: 0
+  goingdown: 0
 --- !u!114 &482693815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35171,6 +35181,11 @@ PrefabInstance:
     - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
       propertyPath: Player
+      value: 
+      objectReference: {fileID: 482693813}
+    - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
+        type: 3}
+      propertyPath: player
       value: 
       objectReference: {fileID: 482693813}
     - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,

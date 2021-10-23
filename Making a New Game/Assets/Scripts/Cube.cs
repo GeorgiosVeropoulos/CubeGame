@@ -6,17 +6,30 @@ using UnityEngine.EventSystems;
 
 public class Cube : MonoBehaviour
 {
-    public float tumblingDuration = 0.2f;
+    public float tumblingDuration = 0.17f;
     Rigidbody mRigidbody;
-    public float Thrust = 20f;
-	public bool freecontrols = false;
+    public float Thrust = 1f;
+	public bool freecontrols = true;
 	public TimerToStart timetostart;
+	public Vector3 currentpos;
 	public Vector3 dir;
 	public bool Up = false;
 	public bool down = false;
 	public bool left = false;
 	public bool right = false;
 	private SkinManager skinmanager;
+	public Vector3 endPosition;
+	public Vector3 startPosition;
+	[SerializeField]
+	private bool isDropping = false;
+	[SerializeField]
+	private bool goingright = false;
+	[SerializeField]
+	private bool goingleft = false;
+	[SerializeField]
+	private bool goingforward = false;
+	[SerializeField]
+	private bool goingdown = false;
 	//public Material testing;
 
 	private void Awake()
@@ -35,55 +48,231 @@ public class Cube : MonoBehaviour
 		this.gameObject.GetComponent<MeshRenderer>().material = skinmanager.SkingToUse;
 		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 		mRigidbody = GetComponent<Rigidbody>();
-		freecontrols = false;
+		freecontrols = true;
 		ONFINGERUP();
 	}
-	public void Update()
+	public void FixedUpdate()
 	{
+		
+		currentpos = this.gameObject.transform.position;
 		// CHECKS IF WE ARE ON THE FLOOR
-		RaycastHit hit;
-		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 4f))
+		RaycastHit hit, hitright, hitleft, hitforward, hitback;
+		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 7f))
 		{
+
 			Debug.DrawRay(transform.position, -Vector3.up * hit.distance, Color.yellow);
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hit.transform.gameObject.tag == "Floor")
 			{
-				//Debug.Log("HIT");
+
+				if (hit.distance <= 0.5)
+				{
+					Debug.Log("HIT FLOOR");
+					mRigidbody.freezeRotation = true;
+					isDropping = false;
+					if (timetostart.begingame == true)
+					{
+						freecontrols = false;
+					}
+					else
+					{
+						freecontrols = true;
+					}
+				}
+				if (hit.distance > 0.7)
+				{
+					Debug.Log("Drop Started");
+					mRigidbody.freezeRotation = true;
+					isDropping = true;
+					freecontrols = true;
+				}
+				else if (hit.distance > 6)
+				{
+					Debug.Log("DIDNT HIT");
+					Drop();
+				}
 			}
 
+
 		}
-		else
+		// this does right movmenet
+		if (Physics.Raycast(transform.position, -Vector3.left, out hitright, 4f))
 		{
-			Debug.Log("DIDNT HIT");
-			Drop();
+			Debug.DrawRay(transform.position, -Vector3.left * hitright.distance, Color.blue);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitright.transform.gameObject.tag == "Floor")
+			{
+				if (hitright.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+
+					//freecontrols = false;
+					goingright = true;
+
+				}
+				else
+				{
+					goingright = false;
+				}
+
+			}
+
+
 		}
-		if (freecontrols == false && Time.timeScale == 1 && timetostart.begingame == true)
+		// this does left movement
+		if (Physics.Raycast(transform.position, -Vector3.right, out hitleft, 4f))
+		{
+			Debug.DrawRay(transform.position, -Vector3.right * hitleft.distance, Color.red);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitleft.transform.gameObject.tag == "Floor")
+			{
+				if (hitleft.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+					
+					goingleft = true;
+
+				}
+				else
+				{
+					goingleft = false;
+				}
+
+			}
+
+
+		}
+		// this does forward check movement
+		if (Physics.Raycast(transform.position, -Vector3.back, out hitforward, 4f))
+		{
+			Debug.DrawRay(transform.position, -Vector3.back * hitforward.distance, Color.green);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitforward.transform.gameObject.tag == "Floor")
+			{
+				if (hitforward.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+
+					//freecontrols = false;
+					goingforward = true;
+
+				}
+				else
+				{
+					goingforward = false;
+				}
+
+			}
+
+
+		}
+		// this does back movement
+		if (Physics.Raycast(transform.position, -Vector3.forward, out hitback, 4f))
+		{
+			Debug.DrawRay(transform.position, -Vector3.forward * hitback.distance, Color.green);
+			//Debug.Log(hit.transform.gameObject.tag);
+			if (hitback.transform.gameObject.tag == "Floor")
+			{
+				if (hitback.distance <= 0.6 && isDropping == false)
+				{
+					Debug.Log("HIT FLOOR ON SIDE");
+
+					//freecontrols = false;
+					goingdown = true;
+
+				}
+				else
+				{
+					goingdown = false;
+				}
+
+			}
+
+
+		}
+
+		if (freecontrols == false && Time.timeScale == 1)
 		{
 			mRigidbody.freezeRotation = true;
 			dir = Vector3.zero;
 
 			#region Normal Controls
-			if (Input.GetKey(KeyCode.W) || Up == true)
+
+			// W KEY
+			if (goingforward == true)
 			{
-				dir = Vector3.forward;
+				if (Input.GetKey(KeyCode.W) || Up == true)
+				{
+					dir = Vector3.forward;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingforward = false;
+				}
+			}
+			else if (goingforward == false)
+			{
+				if (Input.GetKey(KeyCode.W) || Up == true)
+				{
+					dir = Vector3.forward;
+				}
+			}
+			// S KEY
+			if (goingdown == true)
+			{
+				if (Input.GetKey(KeyCode.S) || down == true)
+				{
+					dir = Vector3.back;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingdown = false;
+				}
+			}
+			else if (goingdown == false)
+			{
+				if (Input.GetKey(KeyCode.S) || down == true)
+				{
+					dir = Vector3.back;
+				}
 			}
 
-
-			if (Input.GetKey(KeyCode.S) || down == true)
+			// A KEY
+			if (goingleft == true)
 			{
-				dir = Vector3.back;
+				if (Input.GetKey(KeyCode.A) || left == true)
+				{
+					dir = Vector3.left;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingleft = false;
+				}
+			}
+			else if (goingleft == false)
+			{
+				if (Input.GetKey(KeyCode.A) || left == true)
+				{
+					dir = Vector3.left;
+				}
 			}
 
-
-			if (Input.GetKey(KeyCode.A) || left == true)
+			// D KEY
+			if (goingright == true)
 			{
-				dir = Vector3.left;
+				if (Input.GetKey(KeyCode.D) || right == true)
+				{
+					dir = Vector3.right;
+					startPosition = transform.position;
+					transform.position = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+					goingright = false;
+				}
+			}
+			else if (goingright == false)
+			{
+				if (Input.GetKey(KeyCode.D) || right == true)
+				{
+					dir = Vector3.right;
+				}
 			}
 
-			if (Input.GetKey(KeyCode.D) || right == true)
-			{
-				dir = Vector3.right;
-			}
 			#endregion
 			if (dir != Vector3.zero && !isTumbling)
 			{
@@ -102,10 +291,9 @@ public class Cube : MonoBehaviour
 		{
 			//dir = Vector3.zero;
 		}
-		//GOUP();
-		//GODOWN();
-		//GOLEFT();
-		//GORIGHT();
+		
+
+
 
 	}
 	public void Drop()
@@ -115,20 +303,10 @@ public class Cube : MonoBehaviour
 		freecontrols = true;
 		mRigidbody.AddForce(Vector3.down);
 	}
-	public void LateUpdate()
-	{
-
-
-
-		//Debug.Log(detect.Direction);
-
-		
-
-
-	}
+	
 	public void GOUP()
 	{
-		Debug.Log("HAND DOWN");
+		
 		Up = true;
 		down = false;
 		left = false;
@@ -162,12 +340,9 @@ public class Cube : MonoBehaviour
 		down = false;
 		left = false;
 		right = false;
-		//Debug.Log("HAND UP");
-	}
-	public void onfingerdown()
-	{
 		
 	}
+	
 	bool isTumbling = false;
 	IEnumerator Tumble(Vector3 direction)
 	{

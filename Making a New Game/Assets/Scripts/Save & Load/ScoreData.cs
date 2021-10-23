@@ -24,10 +24,11 @@ public class ScoreData
 	private int score14;
 	private int score15;
 	private int score16;
+	private int score17;
 
 	public ScoreData(int Score0, int Score1, int Score2, int Score3, int Score4, int Score5, int Score6, int Score7
 		, int Score8, int Score9, int Score10, int Score11, int Score12, int Score13, int Score14, int Score15
-		,int Score16)
+		,int Score16, int Score17)
 	{
 		score0 = Score0;
 		score1 = Score1;
@@ -46,6 +47,7 @@ public class ScoreData
 		score14 = Score14;
 		score15 = Score15;
 		score16 = Score16;
+		score17 = Score17;
 
 	}
 	public int Score0 {
@@ -184,5 +186,12 @@ public class ScoreData
 			score16 = value;
 		}
 	}
-
+	public int Score17 {
+		get {
+			return score17;
+		}
+		set {
+			score17 = value;
+		}
+	}
 }

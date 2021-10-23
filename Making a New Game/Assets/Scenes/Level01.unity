@@ -672,11 +672,19 @@ MonoBehaviour:
   Thrust: 1
   freecontrols: 0
   timetostart: {fileID: 1640832158}
+  currentpos: {x: 0, y: 0, z: 0}
   dir: {x: 0, y: 0, z: 0}
   Up: 0
   down: 0
   left: 0
   right: 0
+  endPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  isDropping: 0
+  goingright: 0
+  goingleft: 0
+  goingforward: 0
+  goingdown: 0
 --- !u!54 &482693816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9410,13 +9418,18 @@ PrefabInstance:
       objectReference: {fileID: 482693813}
     - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 482693813}
+    - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
+        type: 3}
       propertyPath: Offset.y
-      value: -4.75
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
       propertyPath: Offset.z
-      value: 7.38
+      value: -7.38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af3e2be982463c4aaab82aea1a4f5ef, type: 3}

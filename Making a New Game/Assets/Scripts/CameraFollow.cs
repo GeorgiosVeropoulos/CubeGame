@@ -17,20 +17,35 @@ public class CameraFollow : MonoBehaviour
 
     public Transform player;
     public Vector3 Offset;
-    [Range(1, 10)]
+    [Range(0.01f, 10)]
     public float smoothFactor;
 
+    private Vector3 velocity = Vector3.zero;
+
+	public void Awake()
+	{
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
+	}
 	private void LateUpdate()
 	{
-        Follow();
+        if(player.position.y< 0)
+		{
+
+		}
+		else
+		{
+            Follow();
+        }
+        
 
     }
 
     private void Follow()
 	{
+        
         Vector3 targetposition = player.position + Offset;
-        transform.position = Vector3.Lerp(transform.position, targetposition, smoothFactor * Time.deltaTime);
-        //transform.position = new Vector3(transform.position.x, (Offset.y), transform.position.z);
-
+        transform.position = Vector3.SmoothDamp(transform.position, targetposition, ref velocity, smoothFactor);
+		//transform.position = new Vector3(transform.position.x, (Offset.y), transform.position.z);
+		
     }
 }
