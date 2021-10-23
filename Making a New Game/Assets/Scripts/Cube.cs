@@ -11,6 +11,7 @@ public class Cube : MonoBehaviour
     public float Thrust = 1f;
 	public bool freecontrols = true;
 	public TimerToStart timetostart;
+	private bool Gamestart = false;
 	public Vector3 currentpos;
 	public Vector3 dir;
 	public bool Up = false;
@@ -45,19 +46,20 @@ public class Cube : MonoBehaviour
 	{
 		// THIS CHANGES THE SKIN OF PLAYER
 		//this.gameObject.GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", skinmanager.SkingToUse);
-		this.gameObject.GetComponent<MeshRenderer>().material = skinmanager.SkingToUse;
+		//this.gameObject.GetComponent<MeshRenderer>().material = skinmanager.SkingToUse;
 		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 		mRigidbody = GetComponent<Rigidbody>();
 		freecontrols = true;
+		Gamestart = false;
 		ONFINGERUP();
 	}
-	public void FixedUpdate()
+	public void Update()
 	{
 		
 		currentpos = this.gameObject.transform.position;
 		// CHECKS IF WE ARE ON THE FLOOR
 		RaycastHit hit, hitright, hitleft, hitforward, hitback;
-		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 7f))
+		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 15f))
 		{
 
 			Debug.DrawRay(transform.position, -Vector3.up * hit.distance, Color.yellow);
@@ -70,7 +72,8 @@ public class Cube : MonoBehaviour
 					Debug.Log("HIT FLOOR");
 					mRigidbody.freezeRotation = true;
 					isDropping = false;
-					if (timetostart.begingame == true)
+					
+					if(timetostart.begingame == true)
 					{
 						freecontrols = false;
 					}
@@ -86,14 +89,32 @@ public class Cube : MonoBehaviour
 					isDropping = true;
 					freecontrols = true;
 				}
-				else if (hit.distance > 6)
-				{
-					Debug.Log("DIDNT HIT");
-					Drop();
-				}
+				
 			}
+			if(hit.transform.gameObject.tag == "Platform")
+			{
+				freecontrols = true;
+				goingdown = false;
+				goingforward = false;
+				goingright = false;
+				goingleft = false;
+				Drop();
+				Debug.Log("DIDNT HIT");
+				
+			}
+			
 
-
+		}
+		else
+		{
+			Debug.Log("VOID");
+			freecontrols = true;
+			goingdown = false;
+			goingforward = false;
+			goingright = false;
+			goingleft = false;
+			isDropping = true;
+			Drop();
 		}
 		// this does right movmenet
 		if (Physics.Raycast(transform.position, -Vector3.left, out hitright, 4f))
@@ -106,7 +127,6 @@ public class Cube : MonoBehaviour
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
-					//freecontrols = false;
 					goingright = true;
 
 				}
@@ -153,7 +173,6 @@ public class Cube : MonoBehaviour
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
-					//freecontrols = false;
 					goingforward = true;
 
 				}
@@ -177,7 +196,7 @@ public class Cube : MonoBehaviour
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
-					//freecontrols = false;
+					
 					goingdown = true;
 
 				}
@@ -287,7 +306,7 @@ public class Cube : MonoBehaviour
 			}
 
 		}
-		else
+		else if(freecontrols == true || Time.timeScale != 1)
 		{
 			//dir = Vector3.zero;
 		}
