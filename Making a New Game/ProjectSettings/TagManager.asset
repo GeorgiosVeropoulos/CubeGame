@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - GameManager
   - Floor
+  - Transparent
+  - MiniCube
   layers:
   - Default
   - TransparentFX

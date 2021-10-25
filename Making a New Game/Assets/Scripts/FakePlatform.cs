@@ -30,7 +30,7 @@ public class FakePlatform : MonoBehaviour
                 explode();
 
                 playercube.Drop();
-                
+                playercube.freecontrols = true;
                 Destroy(this.gameObject);
             }
             else

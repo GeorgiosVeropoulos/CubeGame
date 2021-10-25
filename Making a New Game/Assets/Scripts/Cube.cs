@@ -6,32 +6,33 @@ using UnityEngine.EventSystems;
 
 public class Cube : MonoBehaviour
 {
-    public float tumblingDuration = 0.17f;
-    Rigidbody mRigidbody;
-    public float Thrust = 1f;
-	public bool freecontrols = true;
+    public float tumblingDuration = 0.17f;           // the duration each tumble takes
+    Rigidbody mRigidbody;									
+    public float Thrust = 1f;						// the power of the turn
+	public bool freecontrols = true;				// locking the controls of player for pause and dropping uses
 	public TimerToStart timetostart;
-	private bool Gamestart = false;
-	public Vector3 currentpos;
+	public Vector3 currentpos;						//
+	public Vector3 endPosition;					   //	checks the positions to establish proper movement in walls
+	public Vector3 startPosition;				  //
 	public Vector3 dir;
-	public bool Up = false;
-	public bool down = false;
-	public bool left = false;
-	public bool right = false;
+	
+	private bool Up = false;
+	private bool down = false;
+	private bool left = false;                      // check the button that is being pressed in the touch controls
+	private bool right = false;
 	private SkinManager skinmanager;
-	public Vector3 endPosition;
-	public Vector3 startPosition;
+	
 	[SerializeField]
 	private bool isDropping = false;
 	[SerializeField]
 	private bool goingright = false;
 	[SerializeField]
-	private bool goingleft = false;
+	private bool goingleft = false;				// for wall movement
 	[SerializeField]
 	private bool goingforward = false;
 	[SerializeField]
 	private bool goingdown = false;
-	//public Material testing;
+	
 
 	private void Awake()
 	{
@@ -50,12 +51,17 @@ public class Cube : MonoBehaviour
 		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 		mRigidbody = GetComponent<Rigidbody>();
 		freecontrols = true;
-		Gamestart = false;
+		
 		ONFINGERUP();
 	}
+	
 	public void Update()
 	{
-		
+		goingright = false;
+		goingleft = false;
+		goingforward = false;
+		goingdown = false;
+
 		currentpos = this.gameObject.transform.position;
 		// CHECKS IF WE ARE ON THE FLOOR
 		RaycastHit hit, hitright, hitleft, hitforward, hitback;
@@ -72,8 +78,8 @@ public class Cube : MonoBehaviour
 					Debug.Log("HIT FLOOR");
 					mRigidbody.freezeRotation = true;
 					isDropping = false;
-					
-					if(timetostart.begingame == true)
+
+					if (timetostart.begingame == true)
 					{
 						freecontrols = false;
 					}
@@ -89,20 +95,15 @@ public class Cube : MonoBehaviour
 					isDropping = true;
 					freecontrols = true;
 				}
-				
+
 			}
-			if(hit.transform.gameObject.tag == "Platform")
+			if (hit.transform.gameObject.tag == "MiniCube")
 			{
 				freecontrols = true;
-				goingdown = false;
-				goingforward = false;
-				goingright = false;
-				goingleft = false;
-				Drop();
-				Debug.Log("DIDNT HIT");
-				
 			}
-			
+
+
+
 
 		}
 		else
@@ -116,14 +117,14 @@ public class Cube : MonoBehaviour
 			isDropping = true;
 			Drop();
 		}
-		// this does right movmenet
+		// this checks right walls
 		if (Physics.Raycast(transform.position, -Vector3.left, out hitright, 4f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.left * hitright.distance, Color.blue);
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hitright.transform.gameObject.tag == "Floor")
 			{
-				if (hitright.distance <= 0.6 && isDropping == false)
+				if (hitright.distance <= 0.6 && isDropping == false && freecontrols == false)
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
@@ -139,14 +140,14 @@ public class Cube : MonoBehaviour
 
 
 		}
-		// this does left movement
+		// this checks left walls
 		if (Physics.Raycast(transform.position, -Vector3.right, out hitleft, 4f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.right * hitleft.distance, Color.red);
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hitleft.transform.gameObject.tag == "Floor")
 			{
-				if (hitleft.distance <= 0.6 && isDropping == false)
+				if (hitleft.distance <= 0.6 && isDropping == false && freecontrols == false)
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 					
@@ -162,14 +163,14 @@ public class Cube : MonoBehaviour
 
 
 		}
-		// this does forward check movement
+		// this checks forward walls
 		if (Physics.Raycast(transform.position, -Vector3.back, out hitforward, 4f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.back * hitforward.distance, Color.green);
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hitforward.transform.gameObject.tag == "Floor")
 			{
-				if (hitforward.distance <= 0.6 && isDropping == false)
+				if (hitforward.distance <= 0.6 && isDropping == false && freecontrols == false)
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
@@ -185,14 +186,14 @@ public class Cube : MonoBehaviour
 
 
 		}
-		// this does back movement
+		// this checks back walls
 		if (Physics.Raycast(transform.position, -Vector3.forward, out hitback, 4f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.forward * hitback.distance, Color.green);
 			//Debug.Log(hit.transform.gameObject.tag);
 			if (hitback.transform.gameObject.tag == "Floor")
 			{
-				if (hitback.distance <= 0.6 && isDropping == false)
+				if (hitback.distance <= 0.6 && isDropping == false && freecontrols == false)
 				{
 					Debug.Log("HIT FLOOR ON SIDE");
 
@@ -210,6 +211,9 @@ public class Cube : MonoBehaviour
 
 		}
 
+
+		// here we do all the movement if the time = 1 so you cant move in pause screen
+		// and able to use controls
 		if (freecontrols == false && Time.timeScale == 1)
 		{
 			mRigidbody.freezeRotation = true;
