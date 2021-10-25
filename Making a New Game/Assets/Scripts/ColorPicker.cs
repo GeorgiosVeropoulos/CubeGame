@@ -15,7 +15,7 @@ public class ColorPicker : MonoBehaviour
     // Start is called before the first frame update
     public void Awake()
     {
-
+        
         //thiscube = this.gameObject;
         //counter = GetComponent<Counter>();
         if(meshrend == null)
@@ -27,23 +27,25 @@ public class ColorPicker : MonoBehaviour
         {
             meshrend.material.color = Color.red;
             _color = Color.red;
-
+            meshrend.material.SetColor("_Color", Color.red);
         }
         else if (randomcolorstart == 2)
         {
             meshrend.material.color = Color.blue;
             _color = Color.blue;
-
+            meshrend.material.SetColor("_Color", Color.blue);
         }
         else if (randomcolorstart == 3)
         {
             meshrend.material.color = Color.green;
             _color = Color.green;
+            meshrend.material.SetColor("_Color", Color.green);
         }
         else if (randomcolorstart == 4)
         {
             meshrend.material.color = Color.yellow;
             _color = Color.yellow;
+            meshrend.material.SetColor("_Color", Color.yellow);
         }
     }
 
