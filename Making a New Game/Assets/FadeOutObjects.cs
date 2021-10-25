@@ -108,11 +108,7 @@ public class FadeOutObjects : MonoBehaviour
 		}
 		else
 		{
-			//foreach(Transform obj in Objects)
-			//{
-				
-			//	obj.transform.GetComponent<Dither>().Dithering = false;
-			//}
+			
 			for(int i = 0; i<Objects.Length; i++)
 			{
 				Objects[i].transform.GetComponent<Dither>().Dithering = false;

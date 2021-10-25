@@ -24,10 +24,12 @@ public class LevelData
 	private float timer15;
 	private float timer16;
 	private float timer17;
+	private float timer18;
+	private float timer19;
 
 	public LevelData(float Level1, float Level2, float Level3, float Level4, float Level5, float Level6, float Level7
 		, float Level8, float Level9, float Level10, float Level11, float Level12, float Level13, float Level14, float Level15
-		, float Level16, float Level17)
+		, float Level16, float Level17, float Level18, float Level19)
 	{
 		timer1 = Level1;
 		timer2 = Level2;
@@ -46,6 +48,8 @@ public class LevelData
 		timer15 = Level15;
 		timer16 = Level16;
 		timer17 = Level17;
+		timer18 = Level18;
+		timer19 = Level19;
 
 	}
 	
@@ -183,6 +187,22 @@ public class LevelData
 		}
 		set {
 			timer17 = value;
+		}
+	}
+	public float Timer18 {
+		get {
+			return timer18;
+		}
+		set {
+			timer18 = value;
+		}
+	}
+	public float Timer19 {
+		get {
+			return timer19;
+		}
+		set {
+			timer19 = value;
 		}
 	}
 }

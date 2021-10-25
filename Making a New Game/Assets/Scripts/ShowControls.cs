@@ -183,4 +183,12 @@ public class ShowControls : MonoBehaviour
     {
         SceneManager.LoadScene(17);
     }
+    public void LoadLevel_18()
+    {
+        SceneManager.LoadScene(18);
+    }
+    public void LoadLevel_19()
+    {
+        SceneManager.LoadScene(19);
+    }
 }
