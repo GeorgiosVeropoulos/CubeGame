@@ -181,7 +181,16 @@ public class TimeCounter : MonoBehaviour
     
     public void LoadNextScene()
 	{
-        SceneManager.LoadScene(IndexofScene + 1);
+        if(IndexofScene == 20)
+		{
+            SceneManager.LoadScene(0);
+		}
+		else
+		{
+            SceneManager.LoadScene(IndexofScene + 1);
+        }
+        
+        
 	}
     public void LoadPrevious()
 	{

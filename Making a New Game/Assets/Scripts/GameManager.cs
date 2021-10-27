@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 		times[17] = mydata.Timer17;
 		times[18] = mydata.Timer18;
 		times[19] = mydata.Timer19;
-
+		times[20] = mydata.Timer20;
 	}
 	private void OnApplicationQuit()
 	{
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
 			LevelData data = new LevelData(times[1], times[2], times[3], times[4], times[5], times[6], times[7]
 				, times[8], times[9], times[10], times[11], times[12], times[13], times[14], times[15], times[16]
-				, times[17], times[18], times[19]);
+				, times[17], times[18], times[19], times[20]);
 			
 
 			bf.Serialize(file, data);

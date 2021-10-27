@@ -10654,13 +10654,9 @@ MonoBehaviour:
   freecontrols: 0
   timetostart: {fileID: 1640832158}
   currentpos: {x: 0, y: 0, z: 0}
-  dir: {x: 0, y: 0, z: 0}
-  Up: 0
-  down: 0
-  left: 0
-  right: 0
   endPosition: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 0}
   isDropping: 0
   goingright: 0
   goingleft: 0
@@ -11678,7 +11674,7 @@ GameObject:
   - component: {fileID: 1491862397}
   m_Layer: 0
   m_Name: Garbage collector
-  m_TagString: Untagged
+  m_TagString: Collector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

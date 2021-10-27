@@ -613,7 +613,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4b691b6edac740b4195451693abce79a, type: 2}
+  - {fileID: 2100000, guid: 32af5054e3428c54b80a7e49b5ce8211, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -673,13 +673,9 @@ MonoBehaviour:
   freecontrols: 0
   timetostart: {fileID: 1640832158}
   currentpos: {x: 0, y: 0, z: 0}
-  dir: {x: 0, y: 0, z: 0}
-  Up: 0
-  down: 0
-  left: 0
-  right: 0
   endPosition: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 0}
   isDropping: 0
   goingright: 0
   goingleft: 0
@@ -6992,6 +6988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
+  UseShader: 0
 --- !u!114 &1004314349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7734,6 +7731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
+  UseShader: 0
 --- !u!114 &1348222866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7959,7 +7957,7 @@ GameObject:
   - component: {fileID: 1491862397}
   m_Layer: 0
   m_Name: Garbage collector
-  m_TagString: Untagged
+  m_TagString: Collector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8952,6 +8950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
+  UseShader: 0
 --- !u!114 &2118103593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9221,6 +9220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
+  UseShader: 0
 --- !u!23 &5251237330497772240
 MeshRenderer:
   m_ObjectHideFlags: 0

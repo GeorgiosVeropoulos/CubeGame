@@ -33,7 +33,7 @@ public class Cube : MonoBehaviour
 	[SerializeField]
 	private bool goingdown = false;
 	
-
+	
 	private void Awake()
 	{
 		//SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
@@ -65,7 +65,7 @@ public class Cube : MonoBehaviour
 		currentpos = this.gameObject.transform.position;
 		// CHECKS IF WE ARE ON THE FLOOR
 		RaycastHit hit, hitright, hitleft, hitforward, hitback;
-		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 15f))
+		if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10f))
 		{
 
 			Debug.DrawRay(transform.position, -Vector3.up * hit.distance, Color.yellow);
@@ -101,6 +101,17 @@ public class Cube : MonoBehaviour
 			{
 				freecontrols = true;
 			}
+			if(hit.transform.gameObject.tag == "Collector")
+			{
+				Debug.Log("collector hit");
+				freecontrols = true;
+				goingdown = false;
+				goingforward = false;
+				goingright = false;
+				goingleft = false;
+				isDropping = true;
+				Drop();
+			}
 
 
 
@@ -118,7 +129,7 @@ public class Cube : MonoBehaviour
 			Drop();
 		}
 		// this checks right walls
-		if (Physics.Raycast(transform.position, -Vector3.left, out hitright, 4f))
+		if (Physics.Raycast(transform.position, -Vector3.left, out hitright, 1f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.left * hitright.distance, Color.blue);
 			//Debug.Log(hit.transform.gameObject.tag);
@@ -141,7 +152,7 @@ public class Cube : MonoBehaviour
 
 		}
 		// this checks left walls
-		if (Physics.Raycast(transform.position, -Vector3.right, out hitleft, 4f))
+		if (Physics.Raycast(transform.position, -Vector3.right, out hitleft, 1f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.right * hitleft.distance, Color.red);
 			//Debug.Log(hit.transform.gameObject.tag);
@@ -164,7 +175,7 @@ public class Cube : MonoBehaviour
 
 		}
 		// this checks forward walls
-		if (Physics.Raycast(transform.position, -Vector3.back, out hitforward, 4f))
+		if (Physics.Raycast(transform.position, -Vector3.back, out hitforward, 1f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.back * hitforward.distance, Color.green);
 			//Debug.Log(hit.transform.gameObject.tag);
@@ -187,7 +198,7 @@ public class Cube : MonoBehaviour
 
 		}
 		// this checks back walls
-		if (Physics.Raycast(transform.position, -Vector3.forward, out hitback, 4f))
+		if (Physics.Raycast(transform.position, -Vector3.forward, out hitback, 1f))
 		{
 			Debug.DrawRay(transform.position, -Vector3.forward * hitback.distance, Color.green);
 			//Debug.Log(hit.transform.gameObject.tag);

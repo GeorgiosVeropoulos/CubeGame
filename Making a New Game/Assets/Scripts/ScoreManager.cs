@@ -57,6 +57,7 @@ public class ScoreManager : MonoBehaviour
 		scores[17] = Scoredata.Score17;
 		scores[18] = Scoredata.Score18;
 		scores[19] = Scoredata.Score19;
+		scores[20] = Scoredata.Score20;
 	}
 	private void OnApplicationQuit()
 	{
@@ -81,7 +82,7 @@ public class ScoreManager : MonoBehaviour
 			
 			ScoreData score = new ScoreData(scores[0], scores[1], scores[2], scores[3], scores[4], scores[5], scores[6], scores[7]
 				, scores[8], scores[9], scores[10], scores[11], scores[12], scores[13], scores[14], scores[15], scores[16], scores[17]
-				, scores[18], scores[19]);
+				, scores[18], scores[19], scores[20]);
 
 			
 			//this is new

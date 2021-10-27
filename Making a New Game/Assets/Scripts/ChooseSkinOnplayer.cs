@@ -116,11 +116,22 @@ public class ChooseSkinOnplayer : MonoBehaviour
 			nameofskintext.text = "IronBox";
 			priceofskintext.text = "Price = " + priceofskin[5].ToString();
 		}
+		if (numbertoshow == 6)
+		{
+			showing.sprite = spriteskin[6];
+			if (skins[6] == true)
+			{
+				skinmanager.SkingToUse = skins[6];
+			}
+			skinmanager.numbertoHold = 5;
+			nameofskintext.text = "Halloween";
+			priceofskintext.text = "Price = " + priceofskin[6].ToString();
+		}
 
 	}
 	public void IncreaseOne()
 	{
-		if(numbertoshow < 5)
+		if(numbertoshow < 6)
 		{
 			numbertoshow++;
 		}
@@ -134,7 +145,7 @@ public class ChooseSkinOnplayer : MonoBehaviour
 	{
 		if (numbertoshow == 0)
 		{
-			numbertoshow = 5;
+			numbertoshow = 6;
 		}
 		else
 		{

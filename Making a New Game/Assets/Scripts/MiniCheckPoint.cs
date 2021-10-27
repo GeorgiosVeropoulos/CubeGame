@@ -8,8 +8,7 @@ public class MiniCheckPoint : MonoBehaviour
     public int cubeskilledchekpoint = 2;
     public GameObject checkpoint;
     public GameObject activatethis;
-    public GameObject activateon1;
-    public GameObject activateon2;
+   
     // Start is called before the first frame update
     void Start()
     {

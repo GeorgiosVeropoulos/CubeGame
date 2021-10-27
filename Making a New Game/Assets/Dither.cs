@@ -13,8 +13,8 @@ public class Dither : MonoBehaviour
         mesh = this.gameObject.GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
         if(Dithering == true)
 		{
@@ -27,4 +27,5 @@ public class Dither : MonoBehaviour
 
         //Dithering = false;
     }
+    
 }

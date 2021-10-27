@@ -28,15 +28,7 @@ public class CameraFollow : MonoBehaviour
 	}
 	private void LateUpdate()
 	{
-        //if(player.position.y< 0)
-		//{
 
-		//}
-		//else
-		//{
-            
-            
-  //      }
         Follow();
 
     }
