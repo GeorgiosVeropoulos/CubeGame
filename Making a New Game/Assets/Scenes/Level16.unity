@@ -2470,6 +2470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563001599137992}
+  UseShader: 0
 --- !u!1001 &305388775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3941,6 +3942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563002633977051}
+  UseShader: 0
 --- !u!1 &596520239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5238,6 +5240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 699414584}
+  UseShader: 0
 --- !u!1 &626598823
 GameObject:
   m_ObjectHideFlags: 0
@@ -8258,6 +8261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 699414584}
+  UseShader: 0
 --- !u!1 &941939091
 GameObject:
   m_ObjectHideFlags: 0
@@ -10138,6 +10142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 123007536}
+  UseShader: 0
 --- !u!114 &1017967961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10403,6 +10408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 398093854}
+  UseShader: 0
 --- !u!114 &1027892932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15331,6 +15337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1086543241}
+  UseShader: 0
 --- !u!1 &1242780257
 GameObject:
   m_ObjectHideFlags: 0
@@ -18751,6 +18758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 123007536}
+  UseShader: 0
 --- !u!1 &1388479900
 GameObject:
   m_ObjectHideFlags: 0
@@ -20181,6 +20189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1086543241}
+  UseShader: 0
 --- !u!1 &1456660829
 GameObject:
   m_ObjectHideFlags: 0
@@ -21569,6 +21578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563001068934409}
+  UseShader: 0
 --- !u!1 &1491862395
 GameObject:
   m_ObjectHideFlags: 0
@@ -23841,6 +23851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563002633977051}
+  UseShader: 0
 --- !u!43 &1741078769
 Mesh:
   m_ObjectHideFlags: 0
@@ -24187,8 +24198,6 @@ MonoBehaviour:
   cubeskilledchekpoint: 2
   checkpoint: {fileID: 5428721336856768595}
   activatethis: {fileID: 1138672981}
-  activateon1: {fileID: 0}
-  activateon2: {fileID: 0}
 --- !u!4 &1809152603
 Transform:
   m_ObjectHideFlags: 0
@@ -27879,6 +27888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 398093854}
+  UseShader: 0
 --- !u!43 &2066688908
 Mesh:
   m_ObjectHideFlags: 0
@@ -29430,6 +29440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563002614612675}
+  UseShader: 0
 --- !u!1001 &2102662625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30199,6 +30210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563001068934409}
+  UseShader: 0
 --- !u!65 &5285563001614136304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30307,6 +30319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563001599137992}
+  UseShader: 0
 --- !u!4 &5285563001915108816
 Transform:
   m_ObjectHideFlags: 0
@@ -30415,6 +30428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5285563002614612675}
+  UseShader: 0
 --- !u!4 &5285563002292234001
 Transform:
   m_ObjectHideFlags: 0
@@ -30917,12 +30931,12 @@ PrefabInstance:
     - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
       propertyPath: Offset.y
-      value: -4.75
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 6395302254049463679, guid: 8af3e2be982463c4aaab82aea1a4f5ef,
         type: 3}
       propertyPath: Offset.z
-      value: 7.38
+      value: -7.38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af3e2be982463c4aaab82aea1a4f5ef, type: 3}

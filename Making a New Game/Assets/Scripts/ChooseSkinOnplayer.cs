@@ -123,7 +123,7 @@ public class ChooseSkinOnplayer : MonoBehaviour
 			{
 				skinmanager.SkingToUse = skins[6];
 			}
-			skinmanager.numbertoHold = 5;
+			skinmanager.numbertoHold = 6;
 			nameofskintext.text = "Halloween";
 			priceofskintext.text = "Price = " + priceofskin[6].ToString();
 		}

@@ -581,6 +581,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   hitdistance: 8
+  StartofRay: {x: 0, y: 0, z: 0}
+  RayDirection: {x: 0, y: 0, z: 0}
+  Xposition: 0
+  Yposition: 0.3
+  Zposition: -0.2
 --- !u!1 &464323062
 GameObject:
   m_ObjectHideFlags: 0
