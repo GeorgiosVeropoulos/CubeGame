@@ -47,7 +47,7 @@ public class Cube : MonoBehaviour
 	{
 		// THIS CHANGES THE SKIN OF PLAYER
 		//this.gameObject.GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", skinmanager.SkingToUse);
-		//this.gameObject.GetComponent<MeshRenderer>().material = skinmanager.SkingToUse;
+		this.gameObject.GetComponent<MeshRenderer>().material = skinmanager.SkingToUse;
 		this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
 		mRigidbody = GetComponent<Rigidbody>();
 		freecontrols = true;

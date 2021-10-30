@@ -27,7 +27,7 @@ public class TimerToStart : MonoBehaviour
             timeValue -= Time.deltaTime;
 
         }
-		else
+		else if(timeValue <= 0)
 		{
             timeValue = 0;
             begingame = true;

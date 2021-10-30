@@ -224,7 +224,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh76776
+  m_Name: pb_Mesh56026
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -440,7 +440,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23586
+  m_Name: pb_Mesh55956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1494,7 +1494,7 @@ GameObject:
   - component: {fileID: 674346538}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -2081,6 +2081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 482693809}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 482693809}
   UseShader: 0
+  updatecolor: 0
 --- !u!65 &766141579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2822,7 +2824,7 @@ GameObject:
   - component: {fileID: 1068862011}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -6183,6 +6185,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHECKPOINT
       objectReference: {fileID: 0}
+    - target: {fileID: 5428721338103120535, guid: 85eba2cd3dfd06549a72c839c69fae06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85eba2cd3dfd06549a72c839c69fae06, type: 3}
 --- !u!33 &5251237332013539856
@@ -6438,6 +6445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237332013539859}
   UseShader: 0
+  updatecolor: 0
 --- !u!65 &6825575864456635984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6513,7 +6521,7 @@ MonoBehaviour:
   cubeSize: 0.3
   cubesInRow: 3
   manager: {fileID: 0}
-  prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
+  prefab: {fileID: 4534983427292525123, guid: 35e7d9dd70285224da5aec1380a08fb1, type: 3}
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4

@@ -49,6 +49,7 @@ public class SkinManager : MonoBehaviour
 		skins[3] = SkinData.Skin3;
 		skins[4] = SkinData.Skin4;
 		skins[5] = SkinData.Skin5;
+		skins[6] = SkinData.Skin6;
 	}
 	private void OnApplicationQuit()
 	{
@@ -70,7 +71,7 @@ public class SkinManager : MonoBehaviour
 			file = File.Create(Application.persistentDataPath + Data_Path);
 
 
-			SkinData _skin = new SkinData(skins[1], skins[2], skins[3], skins[4], skins[5]);
+			SkinData _skin = new SkinData(skins[1], skins[2], skins[3], skins[4], skins[5], skins[6]);
 
 
 			//this is new

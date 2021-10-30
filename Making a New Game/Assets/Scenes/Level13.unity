@@ -291,6 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1585467740}
   UseShader: 0
+  updatecolor: 0
 --- !u!64 &44940226
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2444,6 +2445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1478889835}
   UseShader: 0
+  updatecolor: 0
 --- !u!64 &167016822
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4535,6 +4537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1218831325}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &268119372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5067,6 +5070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1283532019}
   UseShader: 0
+  updatecolor: 0
 --- !u!1001 &309949668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5894,6 +5898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1010011662}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &348695351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5943,6 +5948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 882532578}
   UseShader: 0
+  updatecolor: 0
 --- !u!64 &348695354
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8041,6 +8047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237331536173160}
   UseShader: 0
+  updatecolor: 0
 --- !u!54 &482693816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9799,7 +9806,7 @@ GameObject:
   - component: {fileID: 506745737}
   m_Layer: 0
   m_Name: MainPlatform
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12808,6 +12815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 2031789108}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &538366616
 GameObject:
   m_ObjectHideFlags: 0
@@ -12857,6 +12865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1163217654}
   UseShader: 0
+  updatecolor: 0
 --- !u!64 &538366619
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15983,6 +15992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 163126296}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &763380425
 GameObject:
   m_ObjectHideFlags: 0
@@ -18219,6 +18229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1450237072}
   UseShader: 0
+  updatecolor: 0
 --- !u!1001 &861326029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20897,7 +20908,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22932
+  m_Name: pb_Mesh42218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21941,7 +21952,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23378
+  m_Name: pb_Mesh42664
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24223,6 +24234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 782861473}
   UseShader: 0
+  updatecolor: 0
 --- !u!64 &1703546366
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26549,6 +26561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 592369055}
   UseShader: 0
+  updatecolor: 0
 --- !u!1001 &1787221017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31190,6 +31203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 112569109}
   UseShader: 0
+  updatecolor: 0
 --- !u!64 &1995346449
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33351,6 +33365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 56501492}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &2099331643
 GameObject:
   m_ObjectHideFlags: 0
@@ -33830,6 +33845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 1036896414}
   UseShader: 0
+  updatecolor: 0
 --- !u!1001 &2102662625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34569,6 +34585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 622425908}
   UseShader: 0
+  updatecolor: 0
 --- !u!1 &2135892245
 GameObject:
   m_ObjectHideFlags: 0
