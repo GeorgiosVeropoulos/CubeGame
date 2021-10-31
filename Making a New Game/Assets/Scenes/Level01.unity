@@ -6989,6 +6989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
   UseShader: 0
+  updatecolor: 0
 --- !u!114 &1004314349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7004,7 +7005,7 @@ MonoBehaviour:
   cubeSize: 0.3
   cubesInRow: 3
   manager: {fileID: 0}
-  prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
+  prefab: {fileID: 4534983427292525123, guid: 35e7d9dd70285224da5aec1380a08fb1, type: 3}
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
@@ -7732,6 +7733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
   UseShader: 0
+  updatecolor: 0
 --- !u!114 &1348222866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7747,7 +7749,7 @@ MonoBehaviour:
   cubeSize: 0.3
   cubesInRow: 3
   manager: {fileID: 0}
-  prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
+  prefab: {fileID: 4534983427292525123, guid: 35e7d9dd70285224da5aec1380a08fb1, type: 3}
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
@@ -8951,6 +8953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
   UseShader: 0
+  updatecolor: 0
 --- !u!114 &2118103593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8966,7 +8969,7 @@ MonoBehaviour:
   cubeSize: 0.3
   cubesInRow: 3
   manager: {fileID: 0}
-  prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
+  prefab: {fileID: 4534983427292525123, guid: 35e7d9dd70285224da5aec1380a08fb1, type: 3}
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
@@ -9221,6 +9224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubetoCopy: {fileID: 5251237330497772242}
   UseShader: 0
+  updatecolor: 0
 --- !u!23 &5251237330497772240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9462,7 +9466,7 @@ MonoBehaviour:
   cubeSize: 0.3
   cubesInRow: 3
   manager: {fileID: 0}
-  prefab: {fileID: 4183822202264139768, guid: 7965525380d702f4696dc91f7f1814e1, type: 3}
+  prefab: {fileID: 4534983427292525123, guid: 35e7d9dd70285224da5aec1380a08fb1, type: 3}
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
